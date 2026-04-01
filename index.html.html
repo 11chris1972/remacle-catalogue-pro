@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remacle Béton — Catalogue Pro France 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2B4B;--green:#3d7a34;--green-bg:#edf7ec;--red:#b91c1c;--orange:#c2710c;
+  --g1:#f8f9fa;--g2:#e9ecef;--g3:#ced4da;--g4:#868e96;--g5:#495057;
+  --white:#ffffff;--shadow:0 2px 8px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-size:13px;color:var(--navy);background:var(--g1);overflow:hidden;height:100vh}
+
+/* ── HEADER ── */
+.hdr{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:54px;gap:16px;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:32px;width:auto;filter:brightness(0) invert(1)}
+.logo-text .logo-name{font-size:15px;font-weight:700;color:#fff;letter-spacing:.2px}
+.logo-text .logo-sub{font-size:9px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+.hdr-center{flex:1;max-width:520px}
+.search-wrap{position:relative}
+.search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4}
+#srch{width:100%;height:34px;border:none;border-radius:7px;padding:0 12px 0 34px;font-family:inherit;font-size:12px;background:rgba(255,255,255,.12);color:#fff;outline:none}
+#srch::placeholder{color:rgba(255,255,255,.4)}
+#srch:focus{background:rgba(255,255,255,.18)}
+.hdr-right{font-size:11px;color:rgba(255,255,255,.7);text-align:right;line-height:1.6;white-space:nowrap}
+.hdr-right a{color:rgba(255,255,255,.85);text-decoration:none}
+.hdr-right a:hover{color:#fff}
+
+/* ── ZONE BANNER ── */
+.zone-banner{background:linear-gradient(90deg,#253d6e,var(--navy));border-bottom:3px solid var(--green);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:46px;flex-shrink:0;gap:16px}
+.zone-banner-left{display:flex;align-items:center;gap:10px}
+.zone-banner-icon{font-size:16px}
+.zone-banner-text strong{color:#fff;font-size:12px}
+.zone-banner-text span{color:rgba(255,255,255,.6);font-size:11px}
+.zone-active-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:3px 10px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}
+.btn-zone-primary{height:32px;padding:0 14px;background:var(--green);color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.btn-zone-primary:hover{background:#4f9944}
+
+/* ── TABS ── */
+.tabs{background:#fff;border-bottom:1px solid var(--g2);display:flex;overflow-x:auto;gap:0;flex-shrink:0;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 14px;font-size:12px;font-weight:500;color:var(--g5);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:all .15s}
+.tab:hover{color:var(--navy);background:var(--g1)}
+.tab.active{color:var(--green);border-bottom-color:var(--green);font-weight:600}
+.tab .tab-n{font-size:10px;color:var(--g4);margin-left:4px}
+.tab.active .tab-n{color:var(--green)}
+
+/* ── LAYOUT ── */
+.layout{display:flex;height:calc(100vh - 54px - 46px - 43px);overflow:hidden}
+
+/* ── CATALOGUE ── */
+.cat{flex:1;overflow-y:auto;padding:14px 16px;min-width:0}
+.empty-cat{text-align:center;padding:60px 20px;color:var(--g4);font-size:14px}
+.grp-hdr{display:flex;align-items:center;justify-content:space-between;margin:10px 0 7px;padding:5px 10px;background:var(--g1);border-left:3px solid var(--g3);border-radius:0 4px 4px 0}
+.grp-title{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}
+.grp-n{font-size:10px;color:var(--g4);background:var(--g2);border-radius:10px;padding:2px 8px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:8px;margin-bottom:18px}
+
+/* ── CARDS ── */
+.card{background:#fff;border:1px solid var(--g2);border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:6px;transition:box-shadow .15s;min-height:0}
+.card:hover{box-shadow:var(--shadow);border-color:var(--g3)}
+.c-ref{font-size:9px;color:var(--g4);font-family:monospace;letter-spacing:.3px}
+.c-name{font-size:11px;font-weight:600;color:var(--navy);line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.c-dim{font-size:10px;color:var(--g5);margin-top:1px}
+.c-price{font-size:16px;font-weight:700;color:var(--navy)}
+.c-price-sub{font-size:10px;color:var(--g5);font-weight:400}
+.c-remise{font-size:10px;color:var(--g5);background:var(--g2);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.c-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:2px}
+.tag{font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.tag-orange{background:#fff3e0;color:#e65100}
+.tag-blue{background:#e3f2fd;color:#1565c0}
+.c-actions{display:flex;gap:5px;margin-top:4px}
+.btn-add{flex:1;height:30px;background:var(--green);color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-add:hover{background:#4f9944}
+.btn-doc{height:30px;padding:0 8px;background:var(--g1);border:1px solid var(--g2);border-radius:6px;font-family:inherit;font-size:10px;font-weight:500;color:var(--g5);cursor:pointer;text-decoration:none;display:flex;align-items:center;transition:all .15s}
+.btn-doc:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ── ACCORDION ── */
+.acc-hint{font-size:11px;color:var(--g4);padding:2px 2px 8px;font-style:italic}
+.acc{border:1px solid var(--g2);border-radius:9px;margin-bottom:8px;overflow:hidden}
+details[open].acc{border-color:var(--green)}
+.acc-sum{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;list-style:none;background:#fff;user-select:none;gap:10px}
+.acc-sum::-webkit-details-marker{display:none}
+.acc-sum::after{content:'\25B8';font-size:12px;color:var(--g4);flex-shrink:0;transition:transform .2s}
+details[open] .acc-sum::after{transform:rotate(90deg);color:var(--green)}
+.acc-sum:hover{background:var(--g1)}
+.acc-title{font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.4px}
+.acc-n{font-size:10px;color:var(--g4);background:var(--g2);border-radius:10px;padding:1px 7px;flex-shrink:0}
+details[open] .acc-n{background:var(--green-bg);color:var(--green)}
+.acc-grid{padding:4px 10px 10px}
+
+/* ── PANEL ── */
+.panel{width:290px;background:var(--navy);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+.p-hdr{padding:12px 14px 8px;border-bottom:1px solid rgba(255,255,255,.1)}
+.p-title{font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px}
+.p-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px}
+.fill-wrap{padding:8px 14px}
+.fill-label{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.5);margin-bottom:5px}
+.fill-pct{font-weight:700;font-size:13px}
+.fill-pct.ok{color:var(--green)}
+.fill-pct.over{color:#ef4444}
+.fill-track{height:8px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+.fill-bar{height:100%;border-radius:4px;transition:width .3s,background .3s;width:0%}
+.fill-note{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px}
+.fill-warn{font-size:10px;color:#fca5a5;margin-top:4px;display:none}
+.p-zone{padding:6px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.p-zone label{font-size:10px;color:rgba(255,255,255,.5);display:block;margin-bottom:3px}
+#zone{width:100%;height:30px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;font-family:inherit;font-size:11px;padding:0 8px;cursor:pointer}
+#zone option{background:var(--navy);color:#fff}
+.order{flex:1;overflow-y:auto;padding:8px 0}
+.ol{padding:5px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.06)}
+.ol:hover{background:rgba(255,255,255,.04)}
+.ol-name{flex:1;font-size:10px;color:rgba(255,255,255,.8);line-height:1.3;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ol-qty{display:flex;align-items:center;gap:3px}
+.q-btn{width:20px;height:20px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.q-btn:hover{background:rgba(255,255,255,.15)}
+.q-val{font-size:11px;color:#fff;font-weight:600;min-width:18px;text-align:center}
+.ol-price{font-size:10px;color:rgba(255,255,255,.6);min-width:55px;text-align:right}
+.ol-rm{width:18px;height:18px;border-radius:3px;border:none;background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ol-rm:hover{background:rgba(239,68,68,.3);color:#fca5a5}
+.empty-order{text-align:center;padding:24px 14px;color:rgba(255,255,255,.25);font-size:11px}
+.totals{padding:8px 14px;border-top:1px solid rgba(255,255,255,.1)}
+.tot-row{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.5);padding:2px 0}
+.tot-grand{display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:#fff;padding-top:6px;border-top:1px solid rgba(255,255,255,.15);margin-top:4px}
+.client-fields{padding:8px 14px 0;display:flex;flex-direction:column;gap:5px;border-top:1px solid rgba(255,255,255,.1)}
+.client-input{width:100%;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:6px 10px;font-family:inherit;font-size:11px;color:#fff;outline:none;background:rgba(255,255,255,.08)}
+.client-input::placeholder{color:rgba(255,255,255,.3)}
+.client-input:focus{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.12)}
+.client-row{display:flex;gap:5px}
+.p-actions{padding:8px 14px 10px;display:flex;gap:6px}
+.btn-vider{height:34px;padding:0 10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:7px;color:rgba(255,255,255,.6);font-family:inherit;font-size:11px;cursor:pointer;white-space:nowrap}
+.btn-vider:hover{background:rgba(255,255,255,.15)}
+.btn-print{flex:1;height:34px;background:var(--green);border:none;border-radius:7px;color:#fff;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.btn-print:hover{background:#4f9944}
+.btn-mail{height:34px;width:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:7px;color:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.btn-mail:hover{background:rgba(61,122,52,.4);border-color:var(--green)}
+
+/* ── DELIVERY / CGV FOOTER IN PANEL ── */
+.p-footer{padding:8px 14px 10px;border-top:1px solid rgba(255,255,255,.08)}
+.p-footer-links{display:flex;flex-direction:column;gap:3px}
+.p-footer-links a{font-size:10px;color:rgba(255,255,255,.4);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .15s}
+.p-footer-links a:hover{color:rgba(255,255,255,.8)}
+.p-delai{font-size:10px;color:rgba(255,255,255,.35);margin-top:5px;line-height:1.4;border-top:1px solid rgba(255,255,255,.06);padding-top:5px}
+.p-delai a{color:rgba(255,255,255,.5);text-decoration:none}
+.p-delai a:hover{color:#fff}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:500}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:12px;padding:22px;width:480px;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.modal-sub{font-size:11px;color:var(--g5);margin-bottom:14px}
+.zone-grid-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.zcard{border:1.5px solid var(--g2);border-radius:8px;padding:10px;cursor:pointer;transition:all .15s;text-align:center}
+.zcard:hover{border-color:var(--green)}
+.zcard.sel{border-color:var(--green);background:var(--green-bg)}
+.zcard-name{font-size:11px;font-weight:700;color:var(--navy)}
+.zcard-range{font-size:10px;color:var(--g5);margin-top:1px}
+.zcard-price{font-size:14px;font-weight:700;color:var(--green);margin-top:3px}
+.zcard-depts{font-size:9px;color:var(--g4);margin-top:2px;line-height:1.3}
+#zone-addr{width:100%;height:34px;border:1px solid var(--g3);border-radius:7px;padding:0 12px;font-family:inherit;font-size:12px;outline:none;margin-bottom:8px}
+#zone-addr:focus{border-color:var(--navy)}
+#zone-result{font-size:12px;margin-bottom:10px;min-height:20px}
+.modal-actions{display:flex;gap:8px;margin-top:14px}
+.btn-close-modal{padding:0 14px;height:34px;background:var(--g1);border:1px solid var(--g2);border-radius:7px;font-family:inherit;font-size:12px;cursor:pointer}
+.btn-apply-zone{padding:0 14px;height:34px;background:var(--green);color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:none}
+.btn-apply-zone.show{display:block}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  body{overflow:auto;height:auto}
+  .layout{flex-direction:column;height:auto}
+  .cat{padding:10px 10px 80px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+  .panel{position:fixed;bottom:0;left:0;right:0;width:100%;max-height:50vh;border-top:2px solid rgba(255,255,255,.15);z-index:150;transition:max-height .3s}
+  .panel.collapsed{max-height:50px;overflow:hidden}
+  .p-hdr{cursor:pointer}
+}
+
+/* ── LEFT SIDEBAR NAV ── */
+.sidebar{
+  width:185px;flex-shrink:0;background:#fff;border-right:1px solid var(--g2);
+  overflow-y:auto;padding:10px 0;display:flex;flex-direction:column;gap:1px;
+}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--g3);border-radius:2px}
+.sb-section{
+  padding:6px 10px 6px 12px;font-size:10px;font-weight:600;color:var(--g5);
+  cursor:pointer;border-left:3px solid transparent;line-height:1.3;
+  transition:all .15s;text-transform:uppercase;letter-spacing:.3px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:4px;
+  word-break:break-word;
+}
+.sb-section:hover{background:var(--g1);color:var(--navy);border-left-color:var(--g3)}
+.sb-section.active{background:var(--green-bg);color:var(--green);border-left-color:var(--green);font-weight:700}
+.sb-section .sb-n{
+  font-size:9px;font-weight:400;color:var(--g4);background:var(--g2);
+  border-radius:8px;padding:1px 5px;flex-shrink:0;white-space:nowrap;
+}
+.sb-section.active .sb-n{background:rgba(61,122,52,.15);color:var(--green)}
+.sb-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--g4);padding:8px 14px 4px;border-bottom:1px solid var(--g2);margin-bottom:4px}
+.sidebar-empty{display:none}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="logo">
+    <img src="https://www.remacle.be/themes/gbltheme/logo.svg" alt="Remacle Béton">
+    <div class="logo-text">
+      <div class="logo-name">Remacle Béton</div>
+      <div class="logo-sub">Catalogue Pro · France 2026</div>
+    </div>
+  </div>
+  </div>
+  <div class="hdr-center">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="srch" placeholder="Rechercher produit, code article, référence...">
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px">
+    <div id="tarif-badge" style="display:none;background:rgba(61,122,52,.35);border:1px solid rgba(61,122,52,.5);border-radius:20px;padding:2px 10px;font-size:10px;color:#86efac;white-space:nowrap;cursor:pointer" onclick="resetTarif()" title="Cliquez pour revenir au tarif de base">
+      📊 <span id="tarif-nom">Tarif de base</span> ✕
+    </div>
+    <label title="Charger un tarif client Excel" style="height:28px;padding:0 10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;color:rgba(255,255,255,.7);font-size:11px;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;transition:all .15s" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
+      📊 Tarif client
+      <input type="file" accept=".xlsx,.xls" style="display:none" onchange="importerTarif(this)">
+    </label>
+    <div id="import-status" style="font-size:10px;color:rgba(255,255,255,.5)"></div>
+  </div>
+  <div class="hdr-right">
+    +32 81 44 88 88 · <a href="mailto:info@remacle.be">info@remacle.be</a><br>
+    Christophe Decoster · <a href="tel:+32495806975">+32 495 80 69 75</a> · <a href="mailto:cdc@remacle.be">cdc@remacle.be</a>
+  </div>
+</header>
+
+<!-- ZONE BANNER -->
+<div class="zone-banner">
+  <div class="zone-banner-left">
+    <span class="zone-banner-icon">📍</span>
+    <div class="zone-banner-text">
+      <strong>Étape 1 — Calculer la zone de livraison</strong><br>
+      <span>Distance depuis Floriffoux (Belgique) jusqu'à l'agence</span>
+    </div>
+  </div>
+  <span id="zone-active-label" class="zone-active-badge">Z3 ~250 km — 480 €</span>
+  <button class="btn-zone-primary" onclick="openZoneCalc()">🗺 Calculer zone transport</button>
+</div>
+
+<!-- TABS -->
+<div class="tabs" id="tabs"></div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <div class="sidebar" id="sidebar">
+    <div class="sb-label" id="sb-label">Sections</div>
+  </div>
+
+  <!-- CATALOGUE -->
+  <div class="cat" id="cat"></div>
+
+  <!-- PANEL CAMION -->
+  <div class="panel">
+    <div class="p-hdr">
+      <div class="p-title">🚛 Camion plateau</div>
+      <div class="p-sub" id="p-sub">Camion vide</div>
+    </div>
+
+    <div class="fill-wrap">
+      <div class="fill-label">
+        <span>Remplissage</span>
+        <span id="fpct" class="fill-pct">0%</span>
+      </div>
+      <div class="fill-track"><div class="fill-bar" id="fbar"></div></div>
+      <div class="fill-note" id="fnote">Ajoutez des produits au camion</div>
+      <div class="fill-warn" id="wbox"></div>
+    </div>
+
+    <div class="p-zone">
+      <label>Zone transport</label>
+      <select id="zone" onchange="renderTotals();updateZoneBadge()">
+        <option value="295">Z1 ≤ 150 km — 295 €</option>
+        <option value="370">Z2 ~180 km — 370 €</option>
+        <option value="480" selected>Z3 ~250 km — 480 €</option>
+        <option value="600">Z4 ~300 km — 600 €</option>
+        <option value="800">Z5 ~400 km — 800 €</option>
+        <option value="950">Z6 > 400 km — 950 €</option>
+      </select>
+    </div>
+
+    <div class="order" id="order">
+      <div class="empty-order">Cliquez sur « + 1 palette » ou « + 1 unité »<br>pour ajouter des produits</div>
+    </div>
+
+    <div class="totals">
+      <div class="tot-row"><span>Sous-total produits</span><span id="t-prod">0,00 €</span></div>
+      <div class="tot-row"><span>🚛 Transport plateau</span><span id="t-transp">480,00 €</span></div>
+      <div class="tot-row" style="font-size:10px;color:rgba(255,255,255,.4)"><span>⛽ Surcharge carburant UPTR 6,6%<br><span style="font-size:9px;opacity:.7">art. 525845 — temporaire</span></span><span id="t-surcharge">31,68 €</span></div>
+      <div class="tot-grand"><span>TOTAL HT</span><span id="t-total">511,68 €</span></div>
+    </div>
+
+    <div class="client-fields">
+      <input type="text" id="ci-agence" class="client-input" placeholder="Négoce / Agence">
+      <div class="client-row">
+        <input type="text" id="ci-cp" class="client-input" placeholder="CP" style="width:70px">
+        <input type="text" id="ci-ville" class="client-input" placeholder="Ville" style="flex:1">
+      </div>
+      <input type="email" id="ci-email" class="client-input" placeholder="Email agence">
+      <input type="text" id="ci-ref" class="client-input" placeholder="Réf. commande (optionnel)">
+    </div>
+
+    <div class="p-actions">
+      <button class="btn-vider" onclick="vider()">Vider ↺</button>
+      <button class="btn-print" onclick="imprimer()">🖨 PDF</button>
+      <button class="btn-mail" onclick="envoyerMail()" title="Envoyer par mail">📧</button>
+    </div>
+
+    <!-- FOOTER LIENS & DÉLAI -->
+    <div class="p-footer">
+      <div class="p-footer-links">
+        <a href="https://www.remacle.be/sites/default/files/documents/cgv/CGV_Remacle_2026.pdf" target="_blank" rel="noopener noreferrer">📄 Conditions générales de vente 2026</a>
+        <a href="https://www.remacle.be/fr/produits" target="_blank" rel="noopener noreferrer">📦 Catalogue produits remacle.be</a>
+      </div>
+      <div class="p-delai">
+        ⏱ Délai de livraison : sur stock, généralement 1 à 3 semaines selon planning.<br>
+        Envoyez ce récapitulatif à <a href="mailto:info@remacle.be">info@remacle.be</a> pour connaître votre date de livraison.
+      </div>
+    </div>
+
+  </div><!-- /panel -->
+</div><!-- /layout -->
+
+<!-- ZONE MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-title">📍 Calculateur de zone transport</div>
+    <div class="modal-sub">Sélectionnez la zone correspondant à l'adresse de l'agence, ou saisissez l'adresse pour calcul automatique.</div>
+    <div class="zone-grid-mini" id="zone-grid"></div>
+    <input type="text" id="zone-addr" placeholder="Adresse de l'agence (ex: 12 rue de la Paix, Reims)" onkeydown="if(event.key==='Enter')zoneCalc()">
+    <div id="zone-result"></div>
+    <div class="modal-actions">
+      <button class="btn-close-modal" onclick="closeModal()">Fermer</button>
+      <button class="btn-apply-zone" id="apply-zone-btn" onclick="applyZone()">Appliquer cette zone</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS = [{"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262548", "name": "FOSSE SEPTIQUE 1500 (2000) pas CE", "dim": "150", "haut": "150", "poids": null, "prixNet": 262.05, "prixBrut": 391.12, "remise": 33.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262548.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "265009", "name": "FOSSE SEPTIQUE 2000 (2400)", "dim": "149", "haut": "182", "poids": null, "prixNet": 293.15, "prixBrut": 437.54, "remise": 33.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/265009.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "515318", "name": "FOSSE SEPTIQUE 3000 (3700)", "dim": "175", "haut": "197", "poids": null, "prixNet": 468.28, "prixBrut": 780.46, "remise": 40.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/515318.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262553", "name": "FOSSE SEPTIQUE 4200 (5200)", "dim": "223", "haut": "172", "poids": null, "prixNet": 829.73, "prixBrut": 1238.4, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262553.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262554", "name": "FOSSE SEPTIQUE 6500 (7500)", "dim": "223", "haut": "240", "poids": null, "prixNet": 1389.65, "prixBrut": 2074.1, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262554.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262555", "name": "FOSSE SEPTIQUE 8650(10000)", "dim": "250", "haut": "242", "poids": null, "prixNet": 1659.46, "prixBrut": 2476.81, "remise": 33.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262555.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262534", "name": "FOSSE SEPTIQUE 13100 (15000)", "dim": "355/266", "haut": "252", "poids": null, "prixNet": 2055.92, "prixBrut": 3068.54, "remise": 33.0, "frac": 0.333333, "fracPal": null, "palQty": null, "maxCam": 3, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262534.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262536", "name": "FOSSE SEPTIQUE 17500 (20000)", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 1904.23, "prixBrut": 3526.36, "remise": 46.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262536.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "fosses", "art": "262537", "name": "FOSSE SEPTIQUE 26200 (2x15000)", "dim": "2 x 355/266", "haut": "252", "poids": null, "prixNet": 4773.29, "prixBrut": 7124.32, "remise": 33.0, "frac": 0.666667, "fracPal": null, "palQty": null, "maxCam": 1, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262537.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "525692", "name": "FOSSE SEPTIQUE 3000 (3700) RENF", "dim": "175", "haut": "197", "poids": null, "prixNet": 626.55, "prixBrut": 963.93, "remise": 35.0, "frac": 0.15, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/525692.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "444883", "name": "FOSSE SEPTIQUE 4200 (5200) RENF", "dim": "223", "haut": "172", "poids": null, "prixNet": 1179.53, "prixBrut": 1760.49, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444883.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "366057", "name": "FOSSE SEPTIQUE 6500 (7500) RENF", "dim": "223", "haut": "240", "poids": null, "prixNet": 1969.87, "prixBrut": 2940.1, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/366057.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "441390", "name": "FOSSE SEPTIQUE 8650(10000) RENF", "dim": "250", "haut": "242", "poids": null, "prixNet": 2354.29, "prixBrut": 3513.87, "remise": 33.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/441390.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "443263", "name": "FOSSE SEPTIQUE 17500 (20000) RENF", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 2763.29, "prixBrut": 4124.32, "remise": 33.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/443263.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "514878", "name": "SANICLAIR 3/7", "dim": "149", "haut": "177", "poids": null, "prixNet": 787.95, "prixBrut": 1176.04, "remise": 33.0, "frac": 0.111111, "fracPal": null, "palQty": null, "maxCam": 9, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/514878.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "262582", "name": "SANICLAIR 8/12", "dim": "149", "haut": "192", "poids": null, "prixNet": 1018.03, "prixBrut": 1519.44, "remise": 33.0, "frac": 0.111111, "fracPal": null, "palQty": null, "maxCam": 9, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262582.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "262579", "name": "SANICLAIR 13/28", "dim": "223", "haut": "240", "poids": null, "prixNet": 2046.7, "prixBrut": 3054.77, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262579.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "fosses", "art": "262580", "name": "SANICLAIR 29/56", "dim": "2 x 223", "haut": "240", "poids": null, "prixNet": 3270.46, "prixBrut": 4881.28, "remise": 33.0, "frac": 0.333333, "fracPal": null, "palQty": null, "maxCam": 3, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262580.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/11.pdf"}, {"section": "DÉGRAISSEUR", "cat": "separateurs", "art": "262586", "name": "SEPARATEUR A GRAISSES 560", "dim": "150/82", "haut": "107", "poids": null, "prixNet": 295.55, "prixBrut": 441.11, "remise": 33.0, "frac": 0.037037, "fracPal": null, "palQty": null, "maxCam": 27, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262586.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/13.pdf"}, {"section": "DÉGRAISSEUR", "cat": "separateurs", "art": "262587", "name": "SEPARATEUR A GRAISSES 800", "dim": "149", "haut": "118", "poids": null, "prixNet": 1063.1, "prixBrut": 1586.72, "remise": 33.0, "frac": 0.055556, "fracPal": null, "palQty": null, "maxCam": 18, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262587.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/13.pdf"}, {"section": "DÉGRAISSEUR", "cat": "separateurs", "art": "262585", "name": "SEPARATEUR A GRAISSES 2000", "dim": "223", "haut": "172", "poids": null, "prixNet": 2175.63, "prixBrut": 3247.21, "remise": 33.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262585.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/13.pdf"}, {"section": "SÉPARATEUR", "cat": "separateurs", "art": "497409", "name": "SEPARATEUR HYDROCARBURES SOC 3/0.6 E B125", "dim": "144", "haut": "178", "poids": null, "prixNet": 3939.11, "prixBrut": 5627.29, "remise": 30.0, "frac": 0.111111, "fracPal": null, "palQty": null, "maxCam": 9, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/497409.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/14.pdf"}, {"section": "SÉPARATEUR", "cat": "separateurs", "art": "502345", "name": "SEPARATEUR HYDROCARBURES SOC 3-6/1.2 E B125", "dim": "144", "haut": "230", "poids": null, "prixNet": 4313.77, "prixBrut": 6636.57, "remise": 35.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/502345.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/14.pdf"}, {"section": "SÉPARATEUR", "cat": "separateurs", "art": "329255", "name": "FILTRE FC 3-6 EKOTEK", "dim": "", "haut": "", "poids": null, "prixNet": 893.09, "prixBrut": 1373.98, "remise": 35.0, "frac": null, "fracPal": 0.08, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/329255.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/14.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260525", "name": "CHAMBRE DE VISITE 30-E 38/H30", "dim": "38 x 38", "haut": "30", "poids": null, "prixNet": 10.33, "prixBrut": 16.94, "remise": 39.0, "frac": 0.001852, "fracPal": 0.05, "palQty": 27, "maxCam": 540, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260525.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260526", "name": "CHAMBRE DE VISITE 40-E 48/H30", "dim": "48 x 48", "haut": "30", "poids": null, "prixNet": 15.89, "prixBrut": 26.05, "remise": 39.0, "frac": 0.002451, "fracPal": 0.029412, "palQty": 12, "maxCam": 408, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260526.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260527", "name": "CHAMBRE DE VISITE 50-E 58/H30", "dim": "58 x 58", "haut": "30", "poids": null, "prixNet": 22.73, "prixBrut": 37.26, "remise": 39.0, "frac": 0.003205, "fracPal": 0.038462, "palQty": 12, "maxCam": 312, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260527.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260528", "name": "CHAMBRE DE VISITE 60-E 72/H30", "dim": "72 x 72", "haut": "30", "poids": null, "prixNet": 34.81, "prixBrut": 60.02, "remise": 42.0, "frac": 0.005556, "fracPal": 0.033333, "palQty": 6, "maxCam": 180, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260528.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260529", "name": "CHAMBRE DE VISITE 60-E 72/H50", "dim": "72 x 72", "haut": "50", "poids": null, "prixNet": 42.78, "prixBrut": 70.13, "remise": 39.0, "frac": 0.008621, "fracPal": 0.034483, "palQty": 4, "maxCam": 116, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260529.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260530", "name": "CHAMBRE DE VISITE 80-E 92/H60", "dim": "92 x 92", "haut": "60", "poids": null, "prixNet": 81.11, "prixBrut": 132.97, "remise": 39.0, "frac": 0.014706, "fracPal": 0.029412, "palQty": 2, "maxCam": 68, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260530.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "474498", "name": "CHAMBRE DE VISITE 100-E116/H100", "dim": "116 x 116", "haut": "100", "poids": null, "prixNet": 263.61, "prixBrut": 432.14, "remise": 39.0, "frac": 0.035714, "fracPal": 0.035714, "palQty": 1, "maxCam": 28, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/474498.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260592", "name": "COUVERCLE 38", "dim": "38 x 38", "haut": "4", "poids": null, "prixNet": 3.96, "prixBrut": 6.49, "remise": 39.0, "frac": 0.000417, "fracPal": 0.008333, "palQty": 20, "maxCam": 2400, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260592.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260594", "name": "COUVERCLE 48", "dim": "48 x 48 ", "haut": "4", "poids": null, "prixNet": 4.99, "prixBrut": 8.19, "remise": 39.0, "frac": 0.000704, "fracPal": 0.014085, "palQty": 20, "maxCam": 1420, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260594.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260596", "name": "COUVERCLE 58", "dim": "58 x 58", "haut": "4", "poids": null, "prixNet": 6.4, "prixBrut": 10.49, "remise": 39.0, "frac": 0.001042, "fracPal": 0.020833, "palQty": 20, "maxCam": 960, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260596.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260597", "name": "COUVERCLE 70", "dim": "70 x 70 ", "haut": "4", "poids": null, "prixNet": 12.85, "prixBrut": 21.06, "remise": 39.0, "frac": 0.001563, "fracPal": 0.03125, "palQty": 20, "maxCam": 640, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260597.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260601", "name": "COUVERCLE 80", "dim": "80 x 80", "haut": "6", "poids": null, "prixNet": 18.62, "prixBrut": 30.52, "remise": 39.0, "frac": 0.002941, "fracPal": 0.058824, "palQty": 20, "maxCam": 340, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260601.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260602", "name": "COUVERCLE 92", "dim": "92 x 46", "haut": "4", "poids": null, "prixNet": 13.57, "prixBrut": 22.25, "remise": 39.0, "frac": 0.001266, "fracPal": 0.012658, "palQty": 10, "maxCam": 790, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260602.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "273889", "name": "COUVERCLE 114 T60", "dim": "114 x 114", "haut": "6", "poids": null, "prixNet": 63.27, "prixBrut": 103.71, "remise": 39.0, "frac": 0.005263, "fracPal": 0.005263, "palQty": 1, "maxCam": 190, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/273889.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260845", "name": "REHAUSSE 30-E 38/H30", "dim": "38 x 38", "haut": "30", "poids": null, "prixNet": 8.25, "prixBrut": 13.53, "remise": 39.0, "frac": 0.001425, "fracPal": 0.038462, "palQty": 27, "maxCam": 702, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260845.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260846", "name": "REHAUSSE 40-E 48/H30", "dim": "48 x 48", "haut": "30", "poids": null, "prixNet": 11.83, "prixBrut": 19.39, "remise": 39.0, "frac": 0.001667, "fracPal": 0.02, "palQty": 12, "maxCam": 600, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260846.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260847", "name": "REHAUSSE 50-E 58/H30", "dim": "58 x 58", "haut": "30", "poids": null, "prixNet": 16.18, "prixBrut": 26.53, "remise": 39.0, "frac": 0.001984, "fracPal": 0.02381, "palQty": 12, "maxCam": 504, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260847.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260848", "name": "REHAUSSE 50-E 58/H12", "dim": "58 x 58", "haut": "12", "poids": null, "prixNet": 9.14, "prixBrut": 14.98, "remise": 39.0, "frac": 0.000969, "fracPal": 0.023256, "palQty": 24, "maxCam": 1032, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260848.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260849", "name": "REHAUSSE 60-E 72/H30", "dim": "72 x 72", "haut": "30", "poids": null, "prixNet": 26.2, "prixBrut": 42.94, "remise": 39.0, "frac": 0.003623, "fracPal": 0.021739, "palQty": 6, "maxCam": 276, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260849.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260851", "name": "REHAUSSE 70-E 82/H30", "dim": "82 x 82", "haut": "30", "poids": null, "prixNet": 36.1, "prixBrut": 59.18, "remise": 39.0, "frac": 0.004329, "fracPal": 0.012987, "palQty": 3, "maxCam": 231, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260851.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "260852", "name": "REHAUSSE 80-E 92/H30", "dim": "92 x 92", "haut": "30", "poids": null, "prixNet": 41.11, "prixBrut": 67.39, "remise": 39.0, "frac": 0.004902, "fracPal": 0.014706, "palQty": 3, "maxCam": 204, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260852.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "474502", "name": "REHAUSSE 100-E 116/H50", "dim": "116 x 116", "haut": "50", "poids": null, "prixNet": 78.8, "prixBrut": 129.18, "remise": 39.0, "frac": 0.013333, "fracPal": 0.04, "palQty": 3, "maxCam": 75, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/474502.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "444891", "name": "REHAUSSE 60-E 76/H10 RENF", "dim": "76 x 76", "haut": "10", "poids": null, "prixNet": 84.69, "prixBrut": 138.84, "remise": 39.0, "frac": 0.001894, "fracPal": 0.030303, "palQty": 16, "maxCam": 528, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444891.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "315456", "name": "REHAUSSE 60-E 76/H15 RENF", "dim": "76 x 76", "haut": "15", "poids": null, "prixNet": 87.72, "prixBrut": 143.8, "remise": 39.0, "frac": 0.002778, "fracPal": 0.033333, "palQty": 12, "maxCam": 360, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/315456.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "315455", "name": "REHAUSSE 60-E 76/H20 RENF", "dim": "76 x 76", "haut": "20", "poids": null, "prixNet": 92.5, "prixBrut": 151.64, "remise": 39.0, "frac": 0.003846, "fracPal": 0.038462, "palQty": 10, "maxCam": 260, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/315455.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "528957", "name": "REHAUSSE 60-E 76/H30 RENF", "dim": "76 x 76", "haut": "30", "poids": null, "prixNet": 101.29, "prixBrut": 166.05, "remise": 39.0, "frac": 0.005682, "fracPal": 0.045455, "palQty": 8, "maxCam": 176, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/528957.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "REGARDS & REHAUSSES", "cat": "regards", "art": "528958", "name": "REHAUSSE 60-E 76/H50 RENF", "dim": "76 x 76", "haut": "50", "poids": null, "prixNet": 110.32, "prixBrut": 180.86, "remise": 39.0, "frac": 0.009615, "fracPal": 0.038462, "palQty": 4, "maxCam": 104, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/528958.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/50.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "495322", "name": "CITERNE 3000 T60", "dim": "185", "haut": "168", "poids": null, "prixNet": 308.22, "prixBrut": 497.13, "remise": 38.0, "frac": 0.142857, "fracPal": null, "palQty": 7, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/495322.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262462", "name": "CITERNE 5200 T50", "dim": "223", "haut": "172", "poids": null, "prixNet": 417.27, "prixBrut": 758.67, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": 6, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262462.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262022", "name": "CITERNE 7500 T50", "dim": "223", "haut": "240", "poids": null, "prixNet": 618.28, "prixBrut": 1124.15, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": 6, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262022.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262444", "name": "CITERNE 10000 T50", "dim": "250", "haut": "242", "poids": null, "prixNet": 663.89, "prixBrut": 1475.32, "remise": 55.0, "frac": 0.2, "fracPal": null, "palQty": 5, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262444.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262450", "name": "CITERNE 15000 Ovale T60", "dim": "355/266", "haut": "252", "poids": null, "prixNet": 1477.44, "prixBrut": 2272.99, "remise": 35.0, "frac": 0.333333, "fracPal": null, "palQty": 3, "maxCam": 3, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262450.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262454", "name": "CITERNE 20000 T60", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 2007.2, "prixBrut": 3087.99, "remise": 35.0, "frac": 0.5, "fracPal": null, "palQty": 2, "maxCam": 2, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262454.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "262463", "name": "CITERNE 5200 RENF T60", "dim": "223", "haut": "172", "poids": null, "prixNet": 824.05, "prixBrut": 1498.27, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": 6, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262463.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "262466", "name": "CITERNE 7500 RENF T60", "dim": "223", "haut": "240", "poids": null, "prixNet": 1056.99, "prixBrut": 1921.8, "remise": 45.0, "frac": 0.2, "fracPal": null, "palQty": 5, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262466.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "262445", "name": "CITERNE 10000 RENF T60", "dim": "250", "haut": "242", "poids": null, "prixNet": 1114.17, "prixBrut": 2475.94, "remise": 55.0, "frac": 0.25, "fracPal": null, "palQty": 4, "maxCam": 4, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262445.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "262456", "name": "CITERNE 20000 RENF T60", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 2939.56, "prixBrut": 4522.4, "remise": 35.0, "frac": 0.5, "fracPal": null, "palQty": 2, "maxCam": 2, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262456.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "339134", "name": "PERFORATION 110", "dim": "", "haut": "", "poids": null, "prixNet": 88.59, "prixBrut": 132.22, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/339134.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163698", "name": "PERFORATION 125", "dim": "", "haut": "", "poids": null, "prixNet": 88.59, "prixBrut": 132.22, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163698.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163700", "name": "PERFORATION 160", "dim": "", "haut": "", "poids": null, "prixNet": 98.38, "prixBrut": 146.83, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163700.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163701", "name": "PERFORATION 200", "dim": "", "haut": "", "poids": null, "prixNet": 98.38, "prixBrut": 146.83, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163701.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163702", "name": "PERFORATION 250", "dim": "", "haut": "", "poids": null, "prixNet": 118.03, "prixBrut": 176.17, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163702.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163703", "name": "PERFORATION 315", "dim": "", "haut": "", "poids": null, "prixNet": 137.5, "prixBrut": 205.23, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163703.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "163704", "name": "PERFORATION 400", "dim": "", "haut": "", "poids": null, "prixNet": 144.5, "prixBrut": 215.67, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/163704.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154741", "name": "JOINT 110", "dim": "", "haut": "", "poids": null, "prixNet": 35.41, "prixBrut": 52.85, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154743", "name": "JOINT 125", "dim": "", "haut": "", "poids": null, "prixNet": 47.27, "prixBrut": 70.56, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154746", "name": "JOINT 160", "dim": "", "haut": "", "poids": null, "prixNet": 57.13, "prixBrut": 85.26, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154748", "name": "JOINT 200", "dim": "", "haut": "", "poids": null, "prixNet": 59.02, "prixBrut": 88.09, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154750", "name": "JOINT 250", "dim": "", "haut": "", "poids": null, "prixNet": 68.87, "prixBrut": 102.79, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154752", "name": "JOINT 315", "dim": "", "haut": "", "poids": null, "prixNet": 74.77, "prixBrut": 111.6, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "regards", "art": "154754", "name": "JOINT 400", "dim": "", "haut": "", "poids": null, "prixNet": 81.1, "prixBrut": 121.04, "remise": 33.0, "frac": null, "fracPal": 0.04, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "CITERNE COMBI", "cat": "citernes", "art": "443826", "name": "KIT COMBI 150", "dim": "58 x 58", "haut": "35", "poids": null, "prixNet": 818.04, "prixBrut": 2045.11, "remise": 60.0, "frac": 0.007576, "fracPal": 0.06, "palQty": null, "maxCam": 132, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/443826.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/312.pdf"}, {"section": "CITERNE COMBI", "cat": "citernes", "art": "443078", "name": "KIT COMBI 450", "dim": "76 x 76", "haut": "50", "poids": null, "prixNet": 1012.33, "prixBrut": 2249.62, "remise": 55.0, "frac": 0.038462, "fracPal": 0.06, "palQty": null, "maxCam": 26, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/443078.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/312.pdf"}, {"section": "CITERNE avec FILTRE INTÉGRÉ", "cat": "citernes", "art": "262468", "name": "OPTI CITERNE 5200 litres", "dim": "223", "haut": "172", "poids": null, "prixNet": 711.22, "prixBrut": 1293.13, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262468.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "CITERNE avec FILTRE INTÉGRÉ", "cat": "citernes", "art": "262469", "name": "OPTI CITERNE 7500 litres", "dim": "223", "haut": "240", "poids": null, "prixNet": 912.01, "prixBrut": 1658.2, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262469.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "CITERNE avec FILTRE INTÉGRÉ", "cat": "citernes", "art": "262570", "name": "OPTI CITERNE 1000 litres", "dim": "250", "haut": "242", "poids": null, "prixNet": 904.45, "prixBrut": 2009.9, "remise": 55.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262570.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/31.pdf"}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262802", "name": "TEMPO+ 5200 - RU 3000", "dim": "223", "haut": "172", "poids": null, "prixNet": 811.65, "prixBrut": 1475.73, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": null, "pose": null}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262803", "name": "TEMPO+ 7500 - RU 4000", "dim": "223", "haut": "240", "poids": null, "prixNet": 1052.78, "prixBrut": 1914.15, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": null, "pose": null}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262797", "name": "TEMPO+ 10000 - RU 4650", "dim": "250", "haut": "242", "poids": null, "prixNet": 1203.18, "prixBrut": 2187.6, "remise": 45.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": null, "pose": null}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262798", "name": "TEMPO+ 15000 - RU 8800", "dim": "355/266", "haut": "252", "poids": null, "prixNet": 1931.42, "prixBrut": 3511.67, "remise": 45.0, "frac": 0.333333, "fracPal": null, "palQty": null, "maxCam": 3, "type": "citerne", "ft": null, "pose": null}, {"section": "COUVERCLE STANDARD", "cat": "citernes", "art": "262799", "name": "TEMPO+ 20000 - RU 14000 Type H", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 2580.5, "prixBrut": 4691.82, "remise": 45.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": null, "pose": null}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "439732", "name": "TEMPO+ 5200 - RU 3000 RENF", "dim": "223", "haut": "172", "poids": null, "prixNet": 1225.94, "prixBrut": 2228.98, "remise": 45.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/439732.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/32.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "439733", "name": "TEMPO+ 7500 - RU 4000 RENF", "dim": "223", "haut": "240", "poids": null, "prixNet": 1500.01, "prixBrut": 2727.3, "remise": 45.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/439733.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/32.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "439734", "name": "TEMPO+ 10000 - RU 4650 RENF", "dim": "250", "haut": "242", "poids": null, "prixNet": 1723.63, "prixBrut": 3133.88, "remise": 45.0, "frac": 0.25, "fracPal": null, "palQty": null, "maxCam": 4, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/439734.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/32.pdf"}, {"section": "COUVERCLE RENFORCÉ", "cat": "citernes", "art": "471983", "name": "TEMPO+ 20000 - RU 14000 Type H RENF", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 3375.04, "prixBrut": 6136.43, "remise": 45.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "262545", "name": "FILTRE A EAU MOUSSE 150", "dim": "58 x 58", "haut": "35", "poids": null, "prixNet": 119.46, "prixBrut": 183.79, "remise": 35.0, "frac": 0.005, "fracPal": 0.06, "palQty": 12, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262545.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "262546", "name": "FILTRE A EAU SANS FOND", "dim": "58 x 58", "haut": "35", "poids": null, "prixNet": 108.6, "prixBrut": 167.08, "remise": 35.0, "frac": 0.004386, "fracPal": 0.026316, "palQty": 6, "maxCam": 228, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262546.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "263124", "name": "MOUSSE FILTRE A EAU", "dim": "50 x 50", "haut": "1", "poids": null, "prixNet": 23.75, "prixBrut": 36.53, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "260681", "name": "PLAQUE PERFO FILTRE A EAU", "dim": "50 x 25", "haut": "1", "poids": null, "prixNet": 9.38, "prixBrut": 14.43, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "479115", "name": "FILTRE EN LIGNE TRIDENT 325", "dim": "", "haut": "", "poids": null, "prixNet": 417.34, "prixBrut": 642.07, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "525712", "name": "FILTRE A COKES 70/70/50 B125", "dim": "70 x 70", "haut": "50", "poids": null, "prixNet": 239.29, "prixBrut": 368.14, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "315725", "name": "FILTRE A EAU TRIDENT 150", "dim": "", "haut": "", "poids": null, "prixNet": 387.64, "prixBrut": 596.37, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/315725.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "262544", "name": "FILTRE A EAU 400 - 280", "dim": "58 x 58", "haut": "37", "poids": null, "prixNet": 289.4, "prixBrut": 445.22, "remise": 35.0, "frac": 0.00463, "fracPal": 0.027778, "palQty": 6, "maxCam": 216, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262544.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "262543", "name": "FILTRE A EAU 1500 - 860", "dim": "92 x 92 ", "haut": "60", "poids": null, "prixNet": 2238.26, "prixBrut": 3443.48, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262543.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "453940", "name": "FILTRE EN LIGNE C2000 (2000m²)", "dim": "223", "haut": "172", "poids": null, "prixNet": 4086.58, "prixBrut": 6287.04, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/453940.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "444886", "name": "FILTRE EN LIGNE C3000 (3000m²)", "dim": "223", "haut": "172", "poids": null, "prixNet": 4447.58, "prixBrut": 6842.43, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444886.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366049", "name": "PUTEC 130-15 (3000-5200)", "dim": "", "haut": "130", "poids": null, "prixNet": 145.59, "prixBrut": 223.98, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366051", "name": "PUTEC 195-15 (7500-10000)", "dim": "", "haut": "195", "poids": null, "prixNet": 158.74, "prixBrut": 244.22, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366053", "name": "PUTEC  220-15 (15000-20000)", "dim": "", "haut": "220", "poids": null, "prixNet": 178.62, "prixBrut": 274.8, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366050", "name": "PUTEC 140-30 (3000-5200 RENF)", "dim": "", "haut": "140", "poids": null, "prixNet": 171.9, "prixBrut": 264.46, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366052", "name": "PUTEC 195-30 (7500-10000 RENF)", "dim": "", "haut": "195", "poids": null, "prixNet": 185.22, "prixBrut": 284.96, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "366054", "name": "PUTEC  225-30 (15000-20000 RENF)", "dim": "", "haut": "225", "poids": null, "prixNet": 198.5, "prixBrut": 305.38, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "284939", "name": "ASPIRATION FLOTTANTE 140", "dim": "", "haut": "140", "poids": null, "prixNet": 155.76, "prixBrut": 239.63, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "284936", "name": "ASPIRATION FLOTTANTE 210", "dim": "", "haut": "210", "poids": null, "prixNet": 161.61, "prixBrut": 248.63, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "262530", "name": "DISCONNECTEUR", "dim": "58 x 58", "haut": "30", "poids": null, "prixNet": 113.43, "prixBrut": 174.5, "remise": 35.0, "frac": 0.003623, "fracPal": 0.043478, "palQty": 12, "maxCam": 276, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262530.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/40.pdf"}, {"section": "FILTRES À EAU DE PLUIE et ACCESSOIRES", "cat": "filtres", "art": "300345", "name": "EPOXY 10 kg", "dim": "", "haut": "", "poids": null, "prixNet": 357.4, "prixBrut": 549.84, "remise": 35.0, "frac": null, "fracPal": 0.02, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260916", "name": "ANNEAU 110/50", "dim": "110", "haut": "50", "poids": null, "prixNet": 52.87, "prixBrut": 88.12, "remise": 40.0, "frac": 0.008772, "fracPal": 0.026316, "palQty": 3, "maxCam": 114, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260916.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260914", "name": "ANNEAU 110/100", "dim": "110", "haut": "100", "poids": null, "prixNet": 67.73, "prixBrut": 112.88, "remise": 40.0, "frac": 0.017857, "fracPal": 0.035714, "palQty": 2, "maxCam": 56, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260914.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260917", "name": "ANNEAU PERFO 110 x 50", "dim": "110", "haut": "50", "poids": null, "prixNet": 56.36, "prixBrut": 93.94, "remise": 40.0, "frac": 0.008772, "fracPal": 0.026316, "palQty": 3, "maxCam": 114, "type": "palette", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260919", "name": "ANNEAU 110/100 PERFORE", "dim": "110", "haut": "100", "poids": null, "prixNet": 77.94, "prixBrut": 129.9, "remise": 40.0, "frac": 0.016667, "fracPal": 0.033333, "palQty": 2, "maxCam": 60, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260919.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260918", "name": "ANNEAU 110/100 + FOND", "dim": "110", "haut": "100", "poids": null, "prixNet": 140.97, "prixBrut": 234.94, "remise": 40.0, "frac": 0.022727, "fracPal": 0.022727, "palQty": 1, "maxCam": 44, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260918.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "260913", "name": "ANNEAU 110/100 ARME", "dim": "110", "haut": "100", "poids": null, "prixNet": 82.32, "prixBrut": 137.2, "remise": 40.0, "frac": 0.018519, "fracPal": 0.037037, "palQty": 2, "maxCam": 54, "type": "palette", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "regards", "art": "260564", "name": "COUVERCLE 110 T50", "dim": "110", "haut": "6", "poids": null, "prixNet": 57.2, "prixBrut": 95.33, "remise": 40.0, "frac": 0.005, "fracPal": 0.05, "palQty": 10, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260564.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "517806", "name": "BASSIN D'INFILTRATION 1.500 liter  B125", "dim": "240 x 120", "haut": "72", "poids": null, "prixNet": 469.73, "prixBrut": 722.65, "remise": 35.0, "frac": 0.1, "fracPal": null, "palQty": null, "maxCam": 10, "type": "citerne", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "517807", "name": "BASSIN D'INFILTRATION 2500  liter B125", "dim": "240 x 120", "haut": "120", "poids": null, "prixNet": 554.99, "prixBrut": 853.84, "remise": 35.0, "frac": 0.1, "fracPal": null, "palQty": null, "maxCam": 10, "type": "citerne", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "citernes", "art": "262464", "name": "PUITS D'INFILTRATION COMBI 5200 litres (2000l/3200l)", "dim": "223", "haut": "172", "poids": null, "prixNet": 642.52, "prixBrut": 988.5, "remise": 35.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "citernes", "art": "262023", "name": "PUITS D'INFILTRATION COMBI 7200 litres (2500l/5000l)", "dim": "223", "haut": "240", "poids": null, "prixNet": 1044.11, "prixBrut": 1606.32, "remise": 35.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262023.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "citernes", "art": "262451", "name": "PUITS D'INFILTRATION COMBI 10000 litres (3000l/7000l)", "dim": "250", "haut": "242", "poids": null, "prixNet": 1285.06, "prixBrut": 1977.01, "remise": 35.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262451.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "515352", "name": "PUITS D'INFILTRATION 3000", "dim": "175", "haut": "168", "poids": null, "prixNet": 348.6, "prixBrut": 536.31, "remise": 35.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "262950", "name": "PUITS D'INFILTRATION 5200", "dim": "223", "haut": "172", "poids": null, "prixNet": 536.03, "prixBrut": 824.67, "remise": 35.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262950.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "262951", "name": "PUITS D'INFILTRATION 7500", "dim": "223", "haut": "240", "poids": null, "prixNet": 870.87, "prixBrut": 1339.8, "remise": 35.0, "frac": 0.166667, "fracPal": null, "palQty": null, "maxCam": 6, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262951.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "262945", "name": "PUITS D'INFILTRATION 10000", "dim": "250", "haut": "242", "poids": null, "prixNet": 1071.38, "prixBrut": 1648.27, "remise": 35.0, "frac": 0.2, "fracPal": null, "palQty": null, "maxCam": 5, "type": "citerne", "ft": null, "pose": null}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "441211", "name": "PUITS D'INFILTRATION 15000", "dim": "355/266", "haut": "252", "poids": null, "prixNet": 1732.1, "prixBrut": 2664.76, "remise": 35.0, "frac": 0.333333, "fracPal": null, "palQty": null, "maxCam": 3, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/441211.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/501.pdf"}, {"section": "ANNEAU DE PLUIE / PUITS D'INFILTRATION et BAC D'INFILTRATION", "cat": "infiltration", "art": "461281", "name": "PUITS D'INFILTRATION 20000 Type H", "dim": "450/250", "haut": "253", "poids": null, "prixNet": 2393.96, "prixBrut": 3683.02, "remise": 35.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": null, "pose": null}, {"section": "FOSSE DE GRAISSAGE / DÉBOURBEUR", "cat": "separateurs", "art": "455230", "name": "FOSSE DE GRAISSAGE B 350", "dim": "350 x 110", "haut": "150", "poids": null, "prixNet": 1547.65, "prixBrut": 2309.93, "remise": 33.0, "frac": 0.142857, "fracPal": null, "palQty": null, "maxCam": 7, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/455230.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/15.pdf"}, {"section": "FOSSE DE GRAISSAGE / DÉBOURBEUR", "cat": "separateurs", "art": "455231", "name": "FOSSE DE GRAISSAGE C 590", "dim": "590 x 145", "haut": "150", "poids": null, "prixNet": 2191.75, "prixBrut": 3271.26, "remise": 33.0, "frac": 0.5, "fracPal": null, "palQty": null, "maxCam": 2, "type": "citerne", "ft": "https://www.remacle.be/sites/default/files/documents/technical/455231.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/15.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444870", "name": "LINTEAU 9/14/120", "dim": "120", "haut": "", "poids": null, "prixNet": 5.63, "prixBrut": 9.71, "remise": 42.0, "frac": 0.000889, "fracPal": 0.021333, "palQty": 24, "maxCam": 1125, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444870.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444871", "name": "LINTEAU 9/14/140", "dim": "140", "haut": "", "poids": null, "prixNet": 6.85, "prixBrut": 11.82, "remise": 42.0, "frac": 0.001148, "fracPal": 0.027556, "palQty": 24, "maxCam": 871, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444871.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444872", "name": "LINTEAU 9/14/160", "dim": "160", "haut": "", "poids": null, "prixNet": 8.34, "prixBrut": 14.38, "remise": 42.0, "frac": 0.001407, "fracPal": 0.033778, "palQty": 24, "maxCam": 711, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444872.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444873", "name": "LINTEAU 9/14/180", "dim": "180", "haut": "", "poids": null, "prixNet": 9.57, "prixBrut": 16.5, "remise": 42.0, "frac": 0.001556, "fracPal": 0.037333, "palQty": 24, "maxCam": 643, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444873.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444874", "name": "LINTEAU 9/14/200", "dim": "200", "haut": "", "poids": null, "prixNet": 10.44, "prixBrut": 18.01, "remise": 42.0, "frac": 0.001556, "fracPal": 0.037333, "palQty": 24, "maxCam": 643, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444874.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444876", "name": "LINTEAU 9/14/220", "dim": "220", "haut": "", "poids": null, "prixNet": 10.54, "prixBrut": 18.17, "remise": 42.0, "frac": 0.001556, "fracPal": 0.037333, "palQty": 24, "maxCam": 643, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444876.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444877", "name": "LINTEAU 9/14/240", "dim": "240", "haut": "", "poids": null, "prixNet": 12.64, "prixBrut": 21.79, "remise": 42.0, "frac": 0.001852, "fracPal": 0.044444, "palQty": 24, "maxCam": 540, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444877.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444878", "name": "LINTEAU 9/14/260", "dim": "260", "haut": "", "poids": null, "prixNet": 14.53, "prixBrut": 25.06, "remise": 42.0, "frac": 0.002259, "fracPal": 0.054222, "palQty": 24, "maxCam": 443, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444878.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444879", "name": "LINTEAU 9/14/300", "dim": "300", "haut": "", "poids": null, "prixNet": 15.66, "prixBrut": 27.0, "remise": 42.0, "frac": 0.002593, "fracPal": 0.062222, "palQty": 24, "maxCam": 386, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444879.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "450558", "name": "LINTEAU 9/14/340", "dim": "340", "haut": "", "poids": null, "prixNet": 17.09, "prixBrut": 29.47, "remise": 42.0, "frac": 0.002704, "fracPal": 0.064889, "palQty": 24, "maxCam": 370, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/450558.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260448", "name": "LINTEAU 9/19/100", "dim": "100", "haut": "", "poids": null, "prixNet": 5.27, "prixBrut": 9.09, "remise": 42.0, "frac": 0.001407, "fracPal": 0.025333, "palQty": 18, "maxCam": 711, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260448.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260449", "name": "LINTEAU 9/19/120", "dim": "120", "haut": "", "poids": null, "prixNet": 6.4, "prixBrut": 11.03, "remise": 42.0, "frac": 0.001667, "fracPal": 0.03, "palQty": 18, "maxCam": 600, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260449.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260450", "name": "LINTEAU 9/19/140", "dim": "140", "haut": "", "poids": null, "prixNet": 7.98, "prixBrut": 13.76, "remise": 42.0, "frac": 0.002, "fracPal": 0.036, "palQty": 18, "maxCam": 500, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260450.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260451", "name": "LINTEAU 9/19/160", "dim": "160", "haut": "", "poids": null, "prixNet": 9.32, "prixBrut": 16.06, "remise": 42.0, "frac": 0.002259, "fracPal": 0.040667, "palQty": 18, "maxCam": 443, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260451.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260452", "name": "LINTEAU 9/19/180", "dim": "180", "haut": "", "poids": null, "prixNet": 10.54, "prixBrut": 18.17, "remise": 42.0, "frac": 0.002519, "fracPal": 0.045333, "palQty": 18, "maxCam": 397, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260452.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260453", "name": "LINTEAU 9/19/200", "dim": "200", "haut": "", "poids": null, "prixNet": 11.67, "prixBrut": 20.12, "remise": 42.0, "frac": 0.002815, "fracPal": 0.050667, "palQty": 18, "maxCam": 355, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260453.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260454", "name": "LINTEAU 9/19/220", "dim": "220", "haut": "", "poids": null, "prixNet": 12.79, "prixBrut": 22.06, "remise": 42.0, "frac": 0.003037, "fracPal": 0.054667, "palQty": 18, "maxCam": 329, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260454.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260455", "name": "LINTEAU 9/19/240", "dim": "240", "haut": "", "poids": null, "prixNet": 13.82, "prixBrut": 23.83, "remise": 42.0, "frac": 0.003407, "fracPal": 0.061333, "palQty": 18, "maxCam": 293, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260455.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260456", "name": "LINTEAU 9/19/260", "dim": "260", "haut": "", "poids": null, "prixNet": 15.04, "prixBrut": 25.94, "remise": 42.0, "frac": 0.00363, "fracPal": 0.065333, "palQty": 18, "maxCam": 276, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260456.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260458", "name": "LINTEAU 9/19/300", "dim": "300", "haut": "", "poids": null, "prixNet": 17.81, "prixBrut": 30.7, "remise": 42.0, "frac": 0.004333, "fracPal": 0.078, "palQty": 18, "maxCam": 231, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260458.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260460", "name": "LINTEAU 9/19/340", "dim": "340", "haut": "", "poids": null, "prixNet": 21.85, "prixBrut": 37.68, "remise": 42.0, "frac": 0.004889, "fracPal": 0.088, "palQty": 18, "maxCam": 205, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260460.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444859", "name": "LINTEAU 14/14/120", "dim": "120", "haut": "", "poids": null, "prixNet": 7.72, "prixBrut": 13.32, "remise": 42.0, "frac": 0.00163, "fracPal": 0.026074, "palQty": 16, "maxCam": 614, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444859.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444861", "name": "LINTEAU 14/14/140", "dim": "140", "haut": "", "poids": null, "prixNet": 9.01, "prixBrut": 15.53, "remise": 42.0, "frac": 0.001926, "fracPal": 0.030815, "palQty": 16, "maxCam": 519, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444861.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444863", "name": "LINTEAU 14/14/160", "dim": "160", "haut": "", "poids": null, "prixNet": 11.06, "prixBrut": 19.06, "remise": 42.0, "frac": 0.002148, "fracPal": 0.03437, "palQty": 16, "maxCam": 466, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444863.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444865", "name": "LINTEAU 14/14/180", "dim": "180", "haut": "", "poids": null, "prixNet": 12.18, "prixBrut": 21.0, "remise": 42.0, "frac": 0.002593, "fracPal": 0.041481, "palQty": 16, "maxCam": 386, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444865.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444866", "name": "LINTEAU 14/14/200", "dim": "200", "haut": "", "poids": null, "prixNet": 13.72, "prixBrut": 23.65, "remise": 42.0, "frac": 0.002741, "fracPal": 0.043852, "palQty": 16, "maxCam": 365, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444866.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444868", "name": "LINTEAU 14/14/240", "dim": "240", "haut": "", "poids": null, "prixNet": 17.66, "prixBrut": 30.45, "remise": 42.0, "frac": 0.003333, "fracPal": 0.053333, "palQty": 16, "maxCam": 300, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444868.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "444869", "name": "LINTEAU 14/14/300", "dim": "300", "haut": "", "poids": null, "prixNet": 20.67, "prixBrut": 35.65, "remise": 42.0, "frac": 0.004074, "fracPal": 0.065185, "palQty": 16, "maxCam": 245, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444869.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260386", "name": "LINTEAU 14/19/100", "dim": "100", "haut": "", "poids": null, "prixNet": 7.11, "prixBrut": 12.26, "remise": 42.0, "frac": 0.001593, "fracPal": 0.019111, "palQty": 12, "maxCam": 628, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260386.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260387", "name": "LINTEAU 14/19/120", "dim": "120", "haut": "", "poids": null, "prixNet": 8.55, "prixBrut": 14.74, "remise": 42.0, "frac": 0.00237, "fracPal": 0.028444, "palQty": 12, "maxCam": 422, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260387.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260388", "name": "LINTEAU 14/19/140", "dim": "140", "haut": "", "poids": null, "prixNet": 9.88, "prixBrut": 17.03, "remise": 42.0, "frac": 0.002259, "fracPal": 0.027111, "palQty": 12, "maxCam": 443, "type": "palette", "ft": null, "pose": null}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260389", "name": "LINTEAU 14/19/160", "dim": "160", "haut": "", "poids": null, "prixNet": 11.62, "prixBrut": 20.03, "remise": 42.0, "frac": 0.002556, "fracPal": 0.030667, "palQty": 12, "maxCam": 391, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260389.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260390", "name": "LINTEAU 14/19/180", "dim": "180", "haut": "", "poids": null, "prixNet": 12.95, "prixBrut": 22.33, "remise": 42.0, "frac": 0.002889, "fracPal": 0.034667, "palQty": 12, "maxCam": 346, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260390.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260391", "name": "LINTEAU 14/19/200", "dim": "200", "haut": "", "poids": null, "prixNet": 14.64, "prixBrut": 25.24, "remise": 42.0, "frac": 0.003593, "fracPal": 0.043111, "palQty": 12, "maxCam": 278, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260391.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260392", "name": "LINTEAU 14/19/220", "dim": "220", "haut": "", "poids": null, "prixNet": 16.12, "prixBrut": 27.79, "remise": 42.0, "frac": 0.003481, "fracPal": 0.041778, "palQty": 12, "maxCam": 287, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260392.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260393", "name": "LINTEAU 14/19/240", "dim": "240", "haut": "", "poids": null, "prixNet": 17.5, "prixBrut": 30.18, "remise": 42.0, "frac": 0.003852, "fracPal": 0.046222, "palQty": 12, "maxCam": 260, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260393.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260394", "name": "LINTEAU 14/19/260", "dim": "260", "haut": "", "poids": null, "prixNet": 18.99, "prixBrut": 32.73, "remise": 42.0, "frac": 0.004148, "fracPal": 0.049778, "palQty": 12, "maxCam": 241, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260394.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260396", "name": "LINTEAU 14/19/300", "dim": "300", "haut": "", "poids": null, "prixNet": 23.85, "prixBrut": 41.12, "remise": 42.0, "frac": 0.004963, "fracPal": 0.059556, "palQty": 12, "maxCam": 201, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260396.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260398", "name": "LINTEAU 14/19/340", "dim": "340", "haut": "", "poids": null, "prixNet": 27.02, "prixBrut": 46.59, "remise": 42.0, "frac": 0.005407, "fracPal": 0.064889, "palQty": 12, "maxCam": 185, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260398.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260411", "name": "LINTEAU 19/19/100", "dim": "100", "haut": "", "poids": null, "prixNet": 8.6, "prixBrut": 14.83, "remise": 42.0, "frac": 0.002333, "fracPal": 0.021, "palQty": 9, "maxCam": 429, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260411.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260412", "name": "LINTEAU 19/19/120", "dim": "120", "haut": "", "poids": null, "prixNet": 10.24, "prixBrut": 17.65, "remise": 42.0, "frac": 0.002815, "fracPal": 0.025333, "palQty": 9, "maxCam": 355, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260412.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260413", "name": "LINTEAU 19/19/140", "dim": "140", "haut": "", "poids": null, "prixNet": 12.03, "prixBrut": 20.74, "remise": 42.0, "frac": 0.003407, "fracPal": 0.030667, "palQty": 9, "maxCam": 293, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260413.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260414", "name": "LINTEAU 19/19/160", "dim": "160", "haut": "", "poids": null, "prixNet": 14.23, "prixBrut": 24.53, "remise": 42.0, "frac": 0.003926, "fracPal": 0.035333, "palQty": 9, "maxCam": 255, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260414.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260415", "name": "LINTEAU 19/19/180", "dim": "180", "haut": "", "poids": null, "prixNet": 15.82, "prixBrut": 27.27, "remise": 42.0, "frac": 0.004333, "fracPal": 0.039, "palQty": 9, "maxCam": 231, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260415.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260416", "name": "LINTEAU 19/19/200", "dim": "200", "haut": "", "poids": null, "prixNet": 17.81, "prixBrut": 30.7, "remise": 42.0, "frac": 0.004852, "fracPal": 0.043667, "palQty": 9, "maxCam": 206, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260416.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260417", "name": "LINTEAU 19/19/220", "dim": "220", "haut": "", "poids": null, "prixNet": 19.35, "prixBrut": 33.36, "remise": 42.0, "frac": 0.005296, "fracPal": 0.047667, "palQty": 9, "maxCam": 189, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260417.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260418", "name": "LINTEAU 19/19/240", "dim": "240", "haut": "", "poids": null, "prixNet": 22.06, "prixBrut": 38.03, "remise": 42.0, "frac": 0.005815, "fracPal": 0.052333, "palQty": 9, "maxCam": 172, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260418.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260419", "name": "LINTEAU 19/19/260", "dim": "260", "haut": "", "poids": null, "prixNet": 23.85, "prixBrut": 41.12, "remise": 42.0, "frac": 0.006407, "fracPal": 0.057667, "palQty": 9, "maxCam": 156, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260419.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260421", "name": "LINTEAU 19/19/300", "dim": "300", "haut": "", "poids": null, "prixNet": 28.1, "prixBrut": 48.44, "remise": 42.0, "frac": 0.007333, "fracPal": 0.066, "palQty": 9, "maxCam": 136, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260421.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260423", "name": "LINTEAU 19/19/340", "dim": "340", "haut": "", "poids": null, "prixNet": 33.42, "prixBrut": 57.62, "remise": 42.0, "frac": 0.008296, "fracPal": 0.074667, "palQty": 9, "maxCam": 121, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260423.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/9.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260461", "name": "PRELINTEAU 9/7/100", "dim": "100", "haut": "", "poids": null, "prixNet": 3.6, "prixBrut": 6.21, "remise": 42.0, "frac": 0.000444, "fracPal": 0.008, "palQty": 18, "maxCam": 2250, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260461.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260462", "name": "PRELINTEAU 9/7/120", "dim": "120", "haut": "", "poids": null, "prixNet": 4.28, "prixBrut": 7.38, "remise": 42.0, "frac": 0.000556, "fracPal": 0.01, "palQty": 18, "maxCam": 1800, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260462.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260463", "name": "PRELINTEAU 9/7/140", "dim": "140", "haut": "", "poids": null, "prixNet": 5.06, "prixBrut": 8.72, "remise": 42.0, "frac": 0.000667, "fracPal": 0.012, "palQty": 18, "maxCam": 1500, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260463.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260464", "name": "PRELINTEAU 9/7/160", "dim": "160", "haut": "", "poids": null, "prixNet": 5.95, "prixBrut": 10.25, "remise": 42.0, "frac": 0.000741, "fracPal": 0.013333, "palQty": 18, "maxCam": 1350, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260464.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260465", "name": "PRELINTEAU 9/7/180", "dim": "180", "haut": "", "poids": null, "prixNet": 6.73, "prixBrut": 11.61, "remise": 42.0, "frac": 0.000889, "fracPal": 0.016, "palQty": 18, "maxCam": 1125, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260465.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260466", "name": "PRELINTEAU 9/7/200", "dim": "200", "haut": "", "poids": null, "prixNet": 7.56, "prixBrut": 13.04, "remise": 42.0, "frac": 0.000926, "fracPal": 0.016667, "palQty": 18, "maxCam": 1080, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260466.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260467", "name": "PRELINTEAU 9/7/220", "dim": "220", "haut": "", "poids": null, "prixNet": 8.14, "prixBrut": 14.03, "remise": 42.0, "frac": 0.001037, "fracPal": 0.018667, "palQty": 18, "maxCam": 964, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260467.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260468", "name": "PRELINTEAU 9/7/240", "dim": "240", "haut": "", "poids": null, "prixNet": 8.87, "prixBrut": 15.3, "remise": 42.0, "frac": 0.001148, "fracPal": 0.020667, "palQty": 18, "maxCam": 871, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260468.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260469", "name": "PRELINTEAU 9/7/260", "dim": "260", "haut": "", "poids": null, "prixNet": 9.75, "prixBrut": 16.82, "remise": 42.0, "frac": 0.001259, "fracPal": 0.022667, "palQty": 18, "maxCam": 794, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260469.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260471", "name": "PRELINTEAU 9/7/300", "dim": "300", "haut": "", "poids": null, "prixNet": 11.06, "prixBrut": 19.07, "remise": 42.0, "frac": 0.001407, "fracPal": 0.025333, "palQty": 18, "maxCam": 711, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260471.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260472", "name": "PRELINTEAU 9/7/340", "dim": "340", "haut": "", "poids": null, "prixNet": 13.04, "prixBrut": 22.48, "remise": 42.0, "frac": 0.00163, "fracPal": 0.029333, "palQty": 18, "maxCam": 614, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260472.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260399", "name": "PRELINTEAU 14/7/100", "dim": "100", "haut": "", "poids": null, "prixNet": 5.48, "prixBrut": 9.44, "remise": 42.0, "frac": 0.000667, "fracPal": 0.008, "palQty": 12, "maxCam": 1500, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260399.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260400", "name": "PRELINTEAU 14/7/120", "dim": "120", "haut": "", "poids": null, "prixNet": 6.52, "prixBrut": 11.24, "remise": 42.0, "frac": 0.000815, "fracPal": 0.009778, "palQty": 12, "maxCam": 1227, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260400.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260401", "name": "PRELINTEAU 14/7/140", "dim": "140", "haut": "", "poids": null, "prixNet": 7.56, "prixBrut": 13.04, "remise": 42.0, "frac": 0.001, "fracPal": 0.012, "palQty": 12, "maxCam": 1000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260401.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260402", "name": "PRELINTEAU 14/7/160", "dim": "160", "haut": "", "poids": null, "prixNet": 8.82, "prixBrut": 15.21, "remise": 42.0, "frac": 0.001148, "fracPal": 0.013778, "palQty": 12, "maxCam": 871, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260402.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260403", "name": "PRELINTEAU 14/7/180", "dim": "180", "haut": "", "poids": null, "prixNet": 10.02, "prixBrut": 17.27, "remise": 42.0, "frac": 0.001259, "fracPal": 0.015111, "palQty": 12, "maxCam": 794, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260403.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260404", "name": "PRELINTEAU 14/7/200", "dim": "200", "haut": "", "poids": null, "prixNet": 11.27, "prixBrut": 19.43, "remise": 42.0, "frac": 0.001407, "fracPal": 0.016889, "palQty": 12, "maxCam": 711, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260404.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260405", "name": "PRELINTEAU 14/7/220", "dim": "220", "haut": "", "poids": null, "prixNet": 12.58, "prixBrut": 21.68, "remise": 42.0, "frac": 0.001481, "fracPal": 0.017778, "palQty": 12, "maxCam": 675, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260405.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260406", "name": "PRELINTEAU 14/7/240", "dim": "240", "haut": "", "poids": null, "prixNet": 13.46, "prixBrut": 23.2, "remise": 42.0, "frac": 0.001704, "fracPal": 0.020444, "palQty": 12, "maxCam": 587, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260406.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260407", "name": "PRELINTEAU 14/7/260", "dim": "260", "haut": "", "poids": null, "prixNet": 14.24, "prixBrut": 24.56, "remise": 42.0, "frac": 0.001889, "fracPal": 0.022667, "palQty": 12, "maxCam": 529, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260407.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260409", "name": "PRELINTEAU 14/7/300", "dim": "300", "haut": "", "poids": null, "prixNet": 16.91, "prixBrut": 29.15, "remise": 42.0, "frac": 0.002185, "fracPal": 0.026222, "palQty": 12, "maxCam": 458, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260409.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260410", "name": "PRELINTEAU 14/7/340", "dim": "340", "haut": "", "poids": null, "prixNet": 19.35, "prixBrut": 33.37, "remise": 42.0, "frac": 0.003074, "fracPal": 0.036889, "palQty": 12, "maxCam": 325, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260410.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260424", "name": "PRELINTEAU 19/7/100", "dim": "100", "haut": "", "poids": null, "prixNet": 7.41, "prixBrut": 12.77, "remise": 42.0, "frac": 0.000889, "fracPal": 0.008, "palQty": 9, "maxCam": 1125, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260424.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260425", "name": "PRELINTEAU 19/7/120", "dim": "120", "haut": "", "poids": null, "prixNet": 8.82, "prixBrut": 15.21, "remise": 42.0, "frac": 0.001074, "fracPal": 0.009667, "palQty": 9, "maxCam": 931, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260425.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260426", "name": "PRELINTEAU 19/7/140", "dim": "140", "haut": "", "poids": null, "prixNet": 10.28, "prixBrut": 17.72, "remise": 42.0, "frac": 0.001222, "fracPal": 0.011, "palQty": 9, "maxCam": 818, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260426.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260427", "name": "PRELINTEAU 19/7/160", "dim": "160", "haut": "", "poids": null, "prixNet": 11.94, "prixBrut": 20.59, "remise": 42.0, "frac": 0.001444, "fracPal": 0.013, "palQty": 9, "maxCam": 692, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260427.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260428", "name": "PRELINTEAU 19/7/180", "dim": "180", "haut": "", "poids": null, "prixNet": 13.46, "prixBrut": 23.2, "remise": 42.0, "frac": 0.001593, "fracPal": 0.014333, "palQty": 9, "maxCam": 628, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260428.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260429", "name": "PRELINTEAU 19/7/200", "dim": "200", "haut": "", "poids": null, "prixNet": 15.13, "prixBrut": 26.08, "remise": 42.0, "frac": 0.001741, "fracPal": 0.015667, "palQty": 9, "maxCam": 574, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260429.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260430", "name": "PRELINTEAU 19/7/220", "dim": "220", "haut": "", "poids": null, "prixNet": 16.69, "prixBrut": 28.78, "remise": 42.0, "frac": 0.001963, "fracPal": 0.017667, "palQty": 9, "maxCam": 509, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260430.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260431", "name": "PRELINTEAU 19/7/240", "dim": "240", "haut": "", "poids": null, "prixNet": 18.0, "prixBrut": 31.04, "remise": 42.0, "frac": 0.002111, "fracPal": 0.019, "palQty": 9, "maxCam": 474, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260431.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260432", "name": "PRELINTEAU 19/7/260", "dim": "260", "haut": "", "poids": null, "prixNet": 19.57, "prixBrut": 33.73, "remise": 42.0, "frac": 0.00237, "fracPal": 0.021333, "palQty": 9, "maxCam": 422, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260432.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260434", "name": "PRELINTEAU 19/7/300", "dim": "300", "haut": "", "poids": null, "prixNet": 23.11, "prixBrut": 39.84, "remise": 42.0, "frac": 0.002667, "fracPal": 0.024, "palQty": 9, "maxCam": 375, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260434.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "PRÉ-LINTEAU ARMÉ CREUX", "cat": "construction", "art": "260435", "name": "PRELINTEAU 19/7/340", "dim": "340", "haut": "", "poids": null, "prixNet": 26.66, "prixBrut": 45.96, "remise": 42.0, "frac": 0.003074, "fracPal": 0.027667, "palQty": 9, "maxCam": 325, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260435.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/10.pdf"}, {"section": "ASSELETS", "cat": "construction", "art": "260382", "name": "ASSELETS BETON 14/19/60", "dim": "60", "haut": "", "poids": null, "prixNet": 18.25, "prixBrut": 28.08, "remise": 35.0, "frac": 0.001481, "fracPal": 0.05, "palQty": null, "maxCam": 675, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260382.pdf", "pose": null}, {"section": "ASSELETS", "cat": "construction", "art": "260383", "name": "ASSELETS BETON 14/19/80", "dim": "80", "haut": "", "poids": null, "prixNet": 20.86, "prixBrut": 32.09, "remise": 35.0, "frac": 0.001963, "fracPal": 0.05, "palQty": null, "maxCam": 509, "type": "palette", "ft": null, "pose": null}, {"section": "ASSELETS", "cat": "construction", "art": "260384", "name": "ASSELETS BETON 19/19/60", "dim": "60", "haut": "", "poids": null, "prixNet": 21.3, "prixBrut": 32.77, "remise": 35.0, "frac": null, "fracPal": 0.05, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "ASSELETS", "cat": "construction", "art": "260385", "name": "ASSELETS BETON 19/19/80", "dim": "80", "haut": "", "poids": null, "prixNet": 23.91, "prixBrut": 36.78, "remise": 35.0, "frac": null, "fracPal": 0.05, "palQty": null, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "DISTANCEURS", "cat": "construction", "art": "453291", "name": "DISTANCEUR 100/40/40", "dim": "100", "haut": "4 x 4", "poids": null, "prixNet": 1.65, "prixBrut": 2.54, "remise": 35.0, "frac": 0.000143, "fracPal": 0.05, "palQty": 350, "maxCam": 7000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/453291.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "263971", "name": "DELTA 15/50", "dim": "15 x 50", "haut": "6", "poids": null, "prixNet": 6.9, "prixBrut": 12.55, "remise": 45.0, "frac": null, "fracPal": 0.04, "palQty": 60, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260614", "name": "DELTA 25/50", "dim": "25 x 50", "haut": "6", "poids": null, "prixNet": 8.06, "prixBrut": 14.66, "remise": 45.0, "frac": 0.00049, "fracPal": 0.029412, "palQty": 60, "maxCam": 2040, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260614.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260617", "name": "DELTA 30/50", "dim": "30 x 50", "haut": "6", "poids": null, "prixNet": 8.11, "prixBrut": 14.75, "remise": 45.0, "frac": 0.000595, "fracPal": 0.035714, "palQty": 60, "maxCam": 1680, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260617.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260621", "name": "DELTA 35/50", "dim": "35 x 50", "haut": "6", "poids": null, "prixNet": 9.87, "prixBrut": 17.94, "remise": 45.0, "frac": 0.000725, "fracPal": 0.043478, "palQty": 60, "maxCam": 1380, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260621.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260624", "name": "DELTA 40/50", "dim": "40 x 50", "haut": "6", "poids": null, "prixNet": 10.92, "prixBrut": 19.85, "remise": 45.0, "frac": 0.000794, "fracPal": 0.047619, "palQty": 60, "maxCam": 1260, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260624.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260628", "name": "DELTA 50/50", "dim": "50 x 50", "haut": "6", "poids": null, "prixNet": 14.53, "prixBrut": 26.41, "remise": 45.0, "frac": 0.001008, "fracPal": 0.032258, "palQty": 32, "maxCam": 992, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260628.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260632", "name": "DELTA 60/50", "dim": "60 x 50", "haut": "6", "poids": null, "prixNet": 18.49, "prixBrut": 33.61, "remise": 45.0, "frac": 0.001078, "fracPal": 0.034483, "palQty": 32, "maxCam": 928, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260632.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260541", "name": "DELTA 25/100", "dim": "25 x 100", "haut": "6", "poids": null, "prixNet": 16.28, "prixBrut": 29.6, "remise": 45.0, "frac": 0.00101, "fracPal": 0.030303, "palQty": 30, "maxCam": 990, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260541.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260542", "name": "DELTA 30/100", "dim": "30 x 100", "haut": "6", "poids": null, "prixNet": 16.68, "prixBrut": 30.32, "remise": 45.0, "frac": 0.00119, "fracPal": 0.035714, "palQty": 30, "maxCam": 840, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260542.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260543", "name": "DELTA 35/100", "dim": "35 x 100", "haut": "6", "poids": null, "prixNet": 19.49, "prixBrut": 35.43, "remise": 45.0, "frac": 0.001449, "fracPal": 0.043478, "palQty": 30, "maxCam": 690, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260543.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260544", "name": "DELTA 40/100", "dim": "40 x 100", "haut": "6", "poids": null, "prixNet": 23.04, "prixBrut": 41.9, "remise": 45.0, "frac": 0.001587, "fracPal": 0.047619, "palQty": 30, "maxCam": 630, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260544.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "444857", "name": "DELTA 45/100", "dim": "45 x 100", "haut": "6", "poids": null, "prixNet": 24.69, "prixBrut": 44.9, "remise": 45.0, "frac": 0.001852, "fracPal": 0.037037, "palQty": 20, "maxCam": 540, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444857.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "444858", "name": "DELTA 50/100", "dim": "50 x 100", "haut": "6", "poids": null, "prixNet": 27.0, "prixBrut": 49.1, "remise": 45.0, "frac": 0.002, "fracPal": 0.04, "palQty": 20, "maxCam": 500, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/444858.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260664", "name": "IOTA 18/50", "dim": "18 x 50", "haut": "5,5", "poids": null, "prixNet": 7.31, "prixBrut": 13.3, "remise": 45.0, "frac": 0.00037, "fracPal": 0.022222, "palQty": 60, "maxCam": 2700, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260664.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260666", "name": "IOTA 25/50", "dim": "25 x 50", "haut": "5,5", "poids": null, "prixNet": 8.19, "prixBrut": 14.88, "remise": 45.0, "frac": 0.00049, "fracPal": 0.029412, "palQty": 60, "maxCam": 2040, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260666.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260668", "name": "IOTA 30/50", "dim": "30 x 50", "haut": "5,5", "poids": null, "prixNet": 8.42, "prixBrut": 15.31, "remise": 45.0, "frac": 0.000595, "fracPal": 0.035714, "palQty": 60, "maxCam": 1680, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260668.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260669", "name": "IOTA 35/50", "dim": "35 x 50", "haut": "5,5", "poids": null, "prixNet": 10.02, "prixBrut": 18.22, "remise": 45.0, "frac": 0.000725, "fracPal": 0.043478, "palQty": 60, "maxCam": 1380, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260669.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260671", "name": "IOTA 40/50", "dim": "40 x 50", "haut": "5,5", "poids": null, "prixNet": 11.42, "prixBrut": 20.76, "remise": 45.0, "frac": 0.000833, "fracPal": 0.05, "palQty": 60, "maxCam": 1200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260671.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260672", "name": "IOTA 50/40", "dim": "50 x 40", "haut": "5,5", "poids": null, "prixNet": 12.32, "prixBrut": 22.4, "remise": 45.0, "frac": 0.000926, "fracPal": 0.037037, "palQty": 40, "maxCam": 1080, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260672.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260545", "name": "IOTA 20/100", "dim": "20 x 100", "haut": "6", "poids": null, "prixNet": 15.99, "prixBrut": 29.08, "remise": 45.0, "frac": 0.000833, "fracPal": 0.025, "palQty": 30, "maxCam": 1200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260545.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260546", "name": "IOTA 25/100", "dim": "25 x 100", "haut": "6", "poids": null, "prixNet": 16.98, "prixBrut": 30.88, "remise": 45.0, "frac": 0.00098, "fracPal": 0.029412, "palQty": 30, "maxCam": 1020, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260546.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260547", "name": "IOTA 30/100", "dim": "30 x 100", "haut": "6", "poids": null, "prixNet": 18.86, "prixBrut": 34.29, "remise": 45.0, "frac": 0.001235, "fracPal": 0.037037, "palQty": 30, "maxCam": 810, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260547.pdf", "pose": null}, {"section": "COUVRE-MUR DEUX PENTES", "cat": "jardin", "art": "260549", "name": "IOTA 40/100", "dim": "40 x 100", "haut": "6", "poids": null, "prixNet": 22.09, "prixBrut": 40.17, "remise": 45.0, "frac": 0.001667, "fracPal": 0.05, "palQty": 30, "maxCam": 600, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260549.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260555", "name": "COUVRE-MUR PLAT 25/100", "dim": "25 x 100", "haut": "5", "poids": null, "prixNet": 16.93, "prixBrut": 30.78, "remise": 45.0, "frac": 0.00101, "fracPal": 0.030303, "palQty": 30, "maxCam": 990, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260555.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260556", "name": "COUVRE-MUR PLAT 30/100", "dim": "30 x 100", "haut": "5", "poids": null, "prixNet": 17.38, "prixBrut": 31.6, "remise": 45.0, "frac": 0.00119, "fracPal": 0.035714, "palQty": 30, "maxCam": 840, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260556.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260557", "name": "COUVRE-MUR PLAT 35/100", "dim": "35 x 100", "haut": "5", "poids": null, "prixNet": 19.43, "prixBrut": 35.33, "remise": 45.0, "frac": 0.001449, "fracPal": 0.043478, "palQty": 30, "maxCam": 690, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260557.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260558", "name": "COUVRE-MUR PLAT 40/100", "dim": "40 x 100", "haut": "5", "poids": null, "prixNet": 23.94, "prixBrut": 43.53, "remise": 45.0, "frac": 0.001667, "fracPal": 0.05, "palQty": 30, "maxCam": 600, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260558.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260559", "name": "COUVRE-MUR PLAT 50/100", "dim": "50 x 100", "haut": "5", "poids": null, "prixNet": 30.66, "prixBrut": 55.74, "remise": 45.0, "frac": 0.002174, "fracPal": 0.043478, "palQty": 20, "maxCam": 460, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260559.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260513", "name": "CHAPITEAU 40/40", "dim": "40 x 40", "haut": "5,5", "poids": null, "prixNet": 16.22, "prixBrut": 24.96, "remise": 35.0, "frac": 0.000556, "fracPal": 0.005556, "palQty": 10, "maxCam": 1800, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260513.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260516", "name": "CHAPITEAU 50/50", "dim": "50 x 50", "haut": "5,5", "poids": null, "prixNet": 17.17, "prixBrut": 26.41, "remise": 35.0, "frac": 0.000855, "fracPal": 0.008547, "palQty": 10, "maxCam": 1170, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260516.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260519", "name": "CHAPITEAU 60/60", "dim": "60 x 60", "haut": "5", "poids": null, "prixNet": 17.6, "prixBrut": 27.07, "remise": 35.0, "frac": 0.005, "fracPal": 0.05, "palQty": 10, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260519.pdf", "pose": null}, {"section": "COUVRE-MUR PLAT", "cat": "jardin", "art": "260521", "name": "CHAPITEAU 70/70", "dim": "70 x 70", "haut": "5", "poids": null, "prixNet": 26.02, "prixBrut": 40.03, "remise": 35.0, "frac": 0.005, "fracPal": 0.05, "palQty": 10, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260521.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "530327", "name": "TIRA TREK 1A 20/20", "dim": "42 x 42", "haut": "", "poids": null, "prixNet": 175.43, "prixBrut": 261.83, "remise": 33.0, "frac": 0.002688, "fracPal": 0.010753, "palQty": 4, "maxCam": 372, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/530327.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "530328", "name": "TIRA TREK 1B 30/30", "dim": "52 x 52", "haut": "", "poids": null, "prixNet": 256.14, "prixBrut": 382.3, "remise": 33.0, "frac": 0.003623, "fracPal": 0.014493, "palQty": 4, "maxCam": 276, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/530328.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "327560", "name": "TIRA TREK 2B 20/40", "dim": "42 x 62", "haut": "", "poids": null, "prixNet": 320.72, "prixBrut": 478.68, "remise": 33.0, "frac": 0.003906, "fracPal": 0.015625, "palQty": 4, "maxCam": 256, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/327560.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "262872", "name": "VENTILOR 20/20", "dim": "38 x 38", "haut": "45", "poids": null, "prixNet": 51.28, "prixBrut": 76.54, "remise": 33.0, "frac": 0.001852, "fracPal": 0.016667, "palQty": 9, "maxCam": 540, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262872.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "262573", "name": "REGISTRE VISTOP 120", "dim": "18 x 17", "haut": "5", "poids": null, "prixNet": 13.68, "prixBrut": 20.42, "remise": 33.0, "frac": 0.000167, "fracPal": 0.008333, "palQty": 50, "maxCam": 6000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262573.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "262574", "name": "REGISTRE VISTOP 165", "dim": "24 x 23", "haut": "5,5", "poids": null, "prixNet": 19.65, "prixBrut": 29.32, "remise": 33.0, "frac": 0.000167, "fracPal": 0.008333, "palQty": 50, "maxCam": 6000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262574.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "262572", "name": "REGISTRE 25/23", "dim": "25 x 23", "haut": "6", "poids": null, "prixNet": 13.68, "prixBrut": 20.42, "remise": 33.0, "frac": 0.005, "fracPal": 0.25, "palQty": 50, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/262572.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "260519", "name": "DALLE CHEMINÉE PLEINE 60/60 - CHAPITEAU 60/60", "dim": "60 x 60", "haut": "5", "poids": null, "prixNet": 17.6, "prixBrut": 27.07, "remise": 35.0, "frac": 0.005, "fracPal": 0.05, "palQty": 10, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260519.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "260521", "name": "DALLE CHEMINÉE PLEINE 70/70 - CHAPITEAU 70/70", "dim": "70 x 70", "haut": "5", "poids": null, "prixNet": 26.02, "prixBrut": 40.03, "remise": 35.0, "frac": 0.005, "fracPal": 0.05, "palQty": 10, "maxCam": 200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260521.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "260633", "name": "DALLE CHEMINEE 60/60 T 20/20", "dim": "60 x 60", "haut": "5", "poids": null, "prixNet": 18.26, "prixBrut": 27.26, "remise": 33.0, "frac": 0.00125, "fracPal": 0.0125, "palQty": 10, "maxCam": 800, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260633.pdf", "pose": null}, {"section": "ASPIRATEURS DE FUMÉE", "cat": "cheminee", "art": "260634", "name": "DALLE CHEMINEE 70/70 T 20/20", "dim": "70 x 70", "haut": "5", "poids": null, "prixNet": 26.52, "prixBrut": 39.58, "remise": 33.0, "frac": 0.001786, "fracPal": 0.017857, "palQty": 10, "maxCam": 560, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260634.pdf", "pose": null}, {"section": "MARCHES D'ESCALIERS", "cat": "jardin", "art": "260795", "name": "PLAQUES DE MARCHE 80", "dim": "80 x 30", "haut": "5", "poids": null, "prixNet": 21.75, "prixBrut": 33.46, "remise": 35.0, "frac": null, "fracPal": 0.04, "palQty": 20, "maxCam": null, "type": "palette", "ft": null, "pose": null}, {"section": "BORDURES", "cat": "jardin", "art": "260896", "name": "BORDURE 15/5", "dim": "15 x 100", "haut": "5", "poids": null, "prixNet": 1.98, "prixBrut": 3.1, "remise": 36.0, "frac": 0.000651, "fracPal": 0.03125, "palQty": 48, "maxCam": 1536, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260896.pdf", "pose": null}, {"section": "BORDURES", "cat": "jardin", "art": "260898", "name": "BORDURE 20/5", "dim": "20 x 100", "haut": "5", "poids": null, "prixNet": 2.2, "prixBrut": 3.43, "remise": 36.0, "frac": 0.000833, "fracPal": 0.05, "palQty": 60, "maxCam": 1200, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260898.pdf", "pose": null}, {"section": "BORDURES", "cat": "jardin", "art": "260901", "name": "BORDURE 25/5", "dim": "25 x 100", "haut": "5", "poids": null, "prixNet": 4.12, "prixBrut": 6.44, "remise": 36.0, "frac": 0.001, "fracPal": 0.04, "palQty": 40, "maxCam": 1000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260901.pdf", "pose": null}, {"section": "BORDURES", "cat": "jardin", "art": "260905", "name": "BORDURE 30/5", "dim": "30 x 100", "haut": "5", "poids": null, "prixNet": 4.97, "prixBrut": 7.76, "remise": 36.0, "frac": 0.001, "fracPal": 0.04, "palQty": 40, "maxCam": 1000, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260905.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "BORDURES", "cat": "jardin", "art": "260908", "name": "BORDURE 40/5", "dim": "40 x 100", "haut": "5", "poids": null, "prixNet": 7.95, "prixBrut": 12.42, "remise": 36.0, "frac": 0.0015, "fracPal": 0.042, "palQty": 28, "maxCam": 667, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260908.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "L ELEMENT", "cat": "jardin", "art": "260688", "name": "L-ELEMENT 40", "dim": "40 x 30", "haut": "40", "poids": null, "prixNet": 10.77, "prixBrut": 16.83, "remise": 36.0, "frac": 0.001667, "fracPal": 0.04, "palQty": 24, "maxCam": 600, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260688.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "L ELEMENT", "cat": "jardin", "art": "260689", "name": "L-ELEMENT 50", "dim": "40 x 40", "haut": "50", "poids": null, "prixNet": 13.49, "prixBrut": 21.08, "remise": 36.0, "frac": 0.0025, "fracPal": 0.04, "palQty": 16, "maxCam": 400, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260689.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "L ELEMENT", "cat": "jardin", "art": "260690", "name": "L-ELEMENT 60", "dim": "50 x 40", "haut": "60", "poids": null, "prixNet": 14.66, "prixBrut": 22.9, "remise": 36.0, "frac": 0.0025, "fracPal": 0.04, "palQty": 16, "maxCam": 400, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260690.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "L ELEMENT", "cat": "jardin", "art": "260691", "name": "L-ELEMENT 80", "dim": "50 x 50", "haut": "80", "poids": null, "prixNet": 34.98, "prixBrut": 54.65, "remise": 36.0, "frac": 0.004032, "fracPal": 0.032258, "palQty": 8, "maxCam": 248, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260691.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "L ELEMENT", "cat": "jardin", "art": "260685", "name": "L-ELEMENT 100", "dim": "50 x 50", "haut": "100", "poids": null, "prixNet": 37.53, "prixBrut": 58.64, "remise": 36.0, "frac": 0.004464, "fracPal": 0.035714, "palQty": 8, "maxCam": 224, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/260685.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/160.pdf"}, {"section": "CLÔTURES", "cat": "jardin", "art": "454564", "name": "PIQUET A FILS 150", "dim": "150", "haut": "10 x 10", "poids": null, "prixNet": 17.31, "prixBrut": 26.64, "remise": 35.0, "frac": 0.001259, "fracPal": 0.04, "palQty": null, "maxCam": 794, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454579", "name": "PIQUET A FILS 200", "dim": "200", "haut": "10 x 10", "poids": null, "prixNet": 19.57, "prixBrut": 30.11, "remise": 35.0, "frac": 0.001667, "fracPal": 0.04, "palQty": null, "maxCam": 600, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454580", "name": "PIQUET A FILS 250", "dim": "250", "haut": "10 x 10", "poids": null, "prixNet": 22.53, "prixBrut": 34.66, "remise": 35.0, "frac": 0.002296, "fracPal": 0.04, "palQty": null, "maxCam": 435, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454605", "name": "COIN A FIL 250", "dim": "250", "haut": "12 x 10", "poids": null, "prixNet": 28.37, "prixBrut": 43.65, "remise": 35.0, "frac": 0.002222, "fracPal": 0.04, "palQty": null, "maxCam": 450, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454600", "name": "POUSSARD 200", "dim": "200", "haut": "8 x 10", "poids": null, "prixNet": 38.57, "prixBrut": 59.34, "remise": 35.0, "frac": 0.001333, "fracPal": 0.04, "palQty": null, "maxCam": 750, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454602", "name": "POUSSARD 250", "dim": "250", "haut": "8 x 10", "poids": null, "prixNet": 45.34, "prixBrut": 69.76, "remise": 35.0, "frac": 0.001667, "fracPal": 0.04, "palQty": null, "maxCam": 600, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454559", "name": "INTERMEDIAIRE 80", "dim": "80", "haut": "12 x 12", "poids": null, "prixNet": 20.67, "prixBrut": 31.8, "remise": 35.0, "frac": 0.00163, "fracPal": 0.04, "palQty": null, "maxCam": 614, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454558", "name": "INTERMEDIAIRE 160", "dim": "160", "haut": "12 x 12", "poids": null, "prixNet": 27.62, "prixBrut": 42.5, "remise": 35.0, "frac": 0.002593, "fracPal": 0.04, "palQty": null, "maxCam": 386, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454562", "name": "INTERMEDIAIRE 200", "dim": "200", "haut": "12 x 12", "poids": null, "prixNet": 30.52, "prixBrut": 46.95, "remise": 35.0, "frac": 0.003074, "fracPal": 0.04, "palQty": null, "maxCam": 325, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454563", "name": "INTERMEDIAIRE 240", "dim": "240", "haut": "12 x 12", "poids": null, "prixNet": 32.37, "prixBrut": 49.81, "remise": 35.0, "frac": 0.003556, "fracPal": 0.04, "palQty": null, "maxCam": 281, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454560", "name": "COIN 80 2R", "dim": "2G", "haut": "12 x 12", "poids": null, "prixNet": 37.0, "prixBrut": 56.93, "remise": 35.0, "frac": 0.00163, "fracPal": 0.04, "palQty": null, "maxCam": 614, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456430", "name": "COIN 160 2R", "dim": "2G", "haut": "12 x 12", "poids": null, "prixNet": 45.69, "prixBrut": 70.29, "remise": 35.0, "frac": 0.002593, "fracPal": 0.04, "palQty": null, "maxCam": 386, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454978", "name": "COIN 200 2R", "dim": "2G", "haut": "12 x 12", "poids": null, "prixNet": 49.69, "prixBrut": 76.44, "remise": 35.0, "frac": 0.003074, "fracPal": 0.04, "palQty": null, "maxCam": 325, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "454980", "name": "COIN 240 2R", "dim": "2G", "haut": "12 x 12", "poids": null, "prixNet": 54.2, "prixBrut": 83.39, "remise": 35.0, "frac": 0.003556, "fracPal": 0.04, "palQty": null, "maxCam": 281, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456435", "name": "COIN 80 3R", "dim": "3G", "haut": "12 x 12", "poids": null, "prixNet": 37.82, "prixBrut": 58.18, "remise": 35.0, "frac": 0.00163, "fracPal": 0.04, "palQty": null, "maxCam": 614, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456437", "name": "COIN 160 3R", "dim": "3G", "haut": "12 x 12", "poids": null, "prixNet": 46.74, "prixBrut": 71.9, "remise": 35.0, "frac": 0.002593, "fracPal": 0.04, "palQty": null, "maxCam": 386, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456438", "name": "COIN 200 3R", "dim": "3G", "haut": "12 x 12", "poids": null, "prixNet": 51.19, "prixBrut": 78.75, "remise": 35.0, "frac": 0.003074, "fracPal": 0.04, "palQty": null, "maxCam": 325, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456439", "name": "COIN 240 3R", "dim": "3G", "haut": "12 x 12", "poids": null, "prixNet": 51.89, "prixBrut": 79.83, "remise": 35.0, "frac": 0.003556, "fracPal": 0.04, "palQty": null, "maxCam": 281, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456431", "name": "ABOUT 80", "dim": "80", "haut": "12 x 12", "poids": null, "prixNet": 20.32, "prixBrut": 31.27, "remise": 35.0, "frac": 0.00163, "fracPal": 0.04, "palQty": null, "maxCam": 614, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456432", "name": "ABOUT 160", "dim": "160", "haut": "12 x 12", "poids": null, "prixNet": 27.57, "prixBrut": 42.41, "remise": 35.0, "frac": 0.002667, "fracPal": 0.04, "palQty": null, "maxCam": 375, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456433", "name": "ABOUT 200", "dim": "200", "haut": "12 x 12", "poids": null, "prixNet": 30.23, "prixBrut": 46.51, "remise": 35.0, "frac": 0.0027, "fracPal": 0.04, "palQty": null, "maxCam": 370, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "456434", "name": "ABOUT 240", "dim": "240", "haut": "12 x 12", "poids": null, "prixNet": 32.55, "prixBrut": 50.07, "remise": 35.0, "frac": 0.003636, "fracPal": 0.04, "palQty": null, "maxCam": 275, "type": "palette", "ft": null, "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "523189", "name": "PLAQUE BETON 200 x 30 x 3,5", "dim": "200", "haut": "30 x 3,5", "poids": null, "prixNet": 18.44, "prixBrut": 28.37, "remise": 35.0, "frac": 0.001818, "fracPal": 0.04, "palQty": null, "maxCam": 550, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/523189.pdf", "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "523191", "name": "PLAQUE BETON 200 x 40 x 3,5", "dim": "199", "haut": "39 x 3,5", "poids": null, "prixNet": 20.74, "prixBrut": 31.9, "remise": 35.0, "frac": 0.002381, "fracPal": 0.04, "palQty": null, "maxCam": 420, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/523191.pdf", "pose": null}, {"section": "CLÔTURES", "cat": "jardin", "art": "523192", "name": "PLAQUE BETON  200 x 50 x 3,5", "dim": "200", "haut": "50 x 3,5", "poids": null, "prixNet": 26.46, "prixBrut": 40.71, "remise": 35.0, "frac": 0.003077, "fracPal": 0.04, "palQty": null, "maxCam": 325, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/523192.pdf", "pose": null}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "263898", "name": "DALLE ANTIDERAPANTE", "dim": "30 x 30", "haut": "6", "poids": null, "prixNet": 5.62, "prixBrut": 8.64, "remise": 35.0, "frac": 0.000421, "fracPal": 0.04, "palQty": null, "maxCam": 2375, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/263898.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/170.pdf"}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "263652", "name": "DALLE 30/30/3", "dim": "30 x 30", "haut": "3", "poids": null, "prixNet": 1.18, "prixBrut": 1.82, "remise": 35.0, "frac": 0.000224, "fracPal": 0.04, "palQty": null, "maxCam": 4464, "type": "palette", "ft": "https://www.remacle.be/sites/default/files/documents/technical/263652.pdf", "pose": "https://www.remacle.be/sites/default/files/documents/placement/170.pdf"}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "263896", "name": "DALLE 30/30/4", "dim": "30 x 30", "haut": "4", "poids": null, "prixNet": 1.23, "prixBrut": 1.89, "remise": 35.0, "frac": 0.000306, "fracPal": 0.04, "palQty": null, "maxCam": 3264, "type": "palette", "ft": null, "pose": null}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "263897", "name": "DALLE 30/30/5", "dim": "30 x 30", "haut": "5", "poids": null, "prixNet": 1.44, "prixBrut": 2.22, "remise": 35.0, "frac": 0.000411, "fracPal": 0.04, "palQty": null, "maxCam": 2432, "type": "palette", "ft": null, "pose": null}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "263899", "name": "DALLE 30/30/6", "dim": "30 x 30", "haut": "6", "poids": null, "prixNet": 1.64, "prixBrut": 2.52, "remise": 35.0, "frac": 0.000488, "fracPal": 0.04, "palQty": null, "maxCam": 2048, "type": "palette", "ft": null, "pose": null}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "253645", "name": "DALLE GAZON 60 x 40 x 10", "dim": "60 x 40", "haut": "10", "poids": null, "prixNet": 2.96, "prixBrut": 5.92, "remise": 50.0, "frac": 0.001316, "fracPal": 0.052632, "palQty": 40, "maxCam": 760, "type": "palette", "ft": null, "pose": null}, {"section": "DALLES ET ÉVACUATION D'EAU", "cat": "jardin", "art": "253644", "name": "DALLE GAZON 60 x 40 x 12", "dim": "60 x 40", "haut": "12", "poids": null, "prixNet": 3.38, "prixBrut": 6.76, "remise": 50.0, "frac": 0.001563, "fracPal": 0.0625, "palQty": 40, "maxCam": 640, "type": "palette", "ft": null, "pose": null}];
+</script>
+<script>
+// ── ZONE CALCULATOR ──────────────────────────────────────────────────────
+const ZONES_DEF = [
+  {id:'zg1',val:295, label:'Zone 1', range:'≤ 150 km', max:150,      depts:'08 — Ardennes',                             peage:false},
+  {id:'zg2',val:370, label:'Zone 2', range:'~180 km',  max:180,      depts:'59, 62, 02, 51',                            peage:false},
+  {id:'zg3',val:480, label:'Zone 3', range:'~250 km',  max:250,      depts:'60, 80, 57, 55',                            peage:false},
+  {id:'zg4',val:600, label:'Zone 4', range:'~300 km',  max:300,      depts:'54, 10, IDF Est (77, 93, 94)',              peage:false},
+  {id:'zg5',val:800, label:'Zone 5', range:'~400 km',  max:400,      depts:'67, IDF Ouest (75, 78, 91, 92, 95), 76, 27',peage:true},
+  {id:'zg6',val:950, label:'Zone 6', range:'> 400 km', max:Infinity, depts:'68, 14, 50, 61',                            peage:true},
+];
+
+let calcZone = null;
+
+function openZoneCalc(){
+  document.getElementById('modal').classList.add('open');
+  renderZoneGrid();
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+}
+function renderZoneGrid(){
+  const grid = document.getElementById('zone-grid');
+  const curVal = parseInt(document.getElementById('zone').value)||480;
+  grid.innerHTML = ZONES_DEF.map(z=>`
+    <div class="zcard${z.val===curVal?' sel':''}" onclick="selectZone(${z.val})">
+      <div class="zcard-name">${z.label}</div>
+      <div class="zcard-range">${z.range}</div>
+      <div class="zcard-price">${z.val} €</div>
+      <div class="zcard-depts">${z.depts}</div>
+    </div>`).join('');
+}
+function selectZone(val){
+  calcZone = ZONES_DEF.find(z=>z.val===val);
+  document.querySelectorAll('.zcard').forEach(c=>c.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  document.getElementById('zone-result').innerHTML = `<span style="color:var(--green);font-weight:600">✓ ${calcZone.label} sélectionnée — ${calcZone.val} €</span>`;
+  document.getElementById('apply-zone-btn').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+
+});
+async function zoneCalc(){
+  const addr = document.getElementById('zone-addr').value.trim();
+  if(!addr) return;
+  const res = document.getElementById('zone-result');
+  res.innerHTML = '<span style="color:var(--g4)">⏳ Calcul en cours...</span>';
+  // Floriffoux coordinates
+  const FLO_LAT = 50.4486, FLO_LON = 4.8636;
+  try{
+    const url = 'https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(addr+', France')+'&format=json&limit=1';
+    const r = await fetch(url, {headers:{'Accept-Language':'fr','User-Agent':'RemacleCatalogue/1.0'}});
+    const d = await r.json();
+    if(!d.length){
+      res.innerHTML = '<span style="color:var(--orange)">Adresse introuvable — essayez avec le code postal ou la ville.</span>';
+      return;
+    }
+    const lat = parseFloat(d[0].lat), lon = parseFloat(d[0].lon);
+    // Haversine formula
+    const R = 6371;
+    const dLat = (lat-FLO_LAT)*Math.PI/180;
+    const dLon = (lon-FLO_LON)*Math.PI/180;
+    const a = Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(FLO_LAT*Math.PI/180)*Math.cos(lat*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    const straight = R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+    // Road distance ≈ straight-line × 1.35 (correction factor)
+    const km = Math.round(straight * 1.35);
+    const zone = ZONES_DEF.find(z=>km<=z.max)||ZONES_DEF[ZONES_DEF.length-1];
+    calcZone = zone;
+    res.innerHTML = '<strong>~'+km+' km</strong> par route → <span style="color:var(--green);font-weight:600">'+zone.label+' — '+zone.val+' €</span>'+(zone.peage?' · péage inclus':'');
+    document.getElementById('apply-zone-btn').classList.add('show');
+    renderZoneGrid();
+  } catch(e){
+    res.innerHTML = '<span style="color:var(--orange)">Erreur réseau — sélectionnez la zone manuellement.</span>';
+  }
+}
+function applyZone(){
+  if(!calcZone) return;
+  const sel = document.getElementById('zone');
+  for(let i=0;i<sel.options.length;i++){
+    if(parseInt(sel.options[i].value)===calcZone.val){ sel.selectedIndex=i; break; }
+  }
+  renderTotals();
+  updateZoneBadge();
+  closeModal();
+}
+function updateZoneBadge(){
+  const sel = document.getElementById('zone');
+  const lbl = document.getElementById('zone-active-label');
+  if(lbl) lbl.textContent = sel.selectedOptions[0].text;
+}
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let activeTab='construction', query='', cart=[], uid=0;
+
+const TABS = [
+  {id:'construction', label:'Construction'},
+  {id:'jardin',       label:'Aménagement'},
+  {id:'regards',      label:'Regards'},
+  {id:'infiltration', label:'Infiltration'},
+  {id:'citernes',     label:'Citernes eau pluie'},
+  {id:'fosses',       label:'Fosses & Saniclair'},
+  {id:'filtres',      label:'Filtres & accessoires'},
+  {id:'separateurs',  label:'Eaux usées & Séparateurs'},
+  {id:'cheminee',     label:'Cheminée'},
+  {id:'all',          label:'Tous les produits'},
+];
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+function init(){
+  renderTabs();
+  renderCat();
+  renderCart();
+  initSidebarScroll();
+  document.getElementById('srch').addEventListener('input',e=>{
+    query=e.target.value.toLowerCase().trim();
+    renderCat();
+  });
+}
+
+// ── TABS ───────────────────────────────────────────────────────────────────
+function renderTabs(){
+  const cats={};
+  PRODUCTS.forEach(p=>{ cats[p.cat]=(cats[p.cat]||0)+1; });
+  const el = document.getElementById('tabs');
+  el.innerHTML = TABS.map(t=>{
+    const n = t.id==='all' ? PRODUCTS.length : (cats[t.id]||0);
+    return `<div class="tab${t.id===activeTab?' active':''}" onclick="setTab('${t.id}')">
+      ${t.label}<span class="tab-n">${n}</span>
+    </div>`;
+  }).join('');
+}
+function setTab(id){
+  activeTab=id; query='';
+  document.getElementById('srch').value='';
+  renderTabs(); renderCat();
+}
+
+// ── CATALOGUE ──────────────────────────────────────────────────────────────
+function filtered(){
+  let prods = activeTab==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===activeTab);
+  if(query) prods = prods.filter(p=>
+    (p.name||'').toLowerCase().includes(query)||
+    (p.art||'').includes(query)||
+    (p.section||'').toLowerCase().includes(query)||
+    (p.dim||'').toLowerCase().includes(query)
+  );
+  return prods;
+}
+function renderCat(){
+  const prods = filtered();
+  const el = document.getElementById('cat');
+  if(!prods.length){ el.innerHTML='<div class="empty-cat">Aucun produit trouvé</div>'; return; }
+  const groups={};
+  prods.forEach(p=>{ const k=p.section||p.cat; if(!groups[k])groups[k]=[]; groups[k].push(p); });
+  const useAcc = (activeTab==='construction') && !query;
+  const entries = Object.entries(groups);
+  let h='';
+  if(useAcc){
+    h+='<div class="acc-hint">Construction — cliquez sur une section pour dérouler</div>';
+    renderSidebar(groups);
+    entries.forEach(([sec,items],gi)=>{
+      const open = gi===0?'open':'';
+      h+=`<details class="acc" ${open}><summary class="acc-sum"><span class="acc-title">${sec}</span><span class="acc-n">${items.length} réf.</span></summary><div class="grid acc-grid">`;
+      items.forEach(p=>h+=cardHTML(p));
+      h+='</div></details>';
+    });
+  } else {
+    renderSidebar(groups);
+    entries.forEach(([sec,items])=>{
+      h+=`<div class="grp-hdr"><span class="grp-title">${sec}</span><span class="grp-n">${items.length} réf.</span></div><div class="grid">`;
+      items.forEach(p=>h+=cardHTML(p));
+      h+='</div>';
+    });
+  }
+  el.innerHTML=h;
+}
+function cardHTML(p){
+  const isCit = p.type==='citerne';
+  const unitLbl = isCit?'unité':'palette';
+  const btnLbl = isCit?'+ 1 unité':'+ 1 palette';
+  const maxInfo = isCit
+    ? (p.frac?`Max ${p.maxCam||Math.round(1/p.frac)}/cam. · ${Math.round(p.frac*100)}%/u`:'')
+    : (p.fracPal?`${p.palQty||''} art./pal. · ${(p.fracPal*100).toFixed(1)}%/pal.`:'');
+  const dimStr = [p.dim?p.dim+' cm':'', p.haut?'H'+p.haut+' cm':'', p.poids?p.poids+' kg':''].filter(Boolean).join(' · ');
+  const idx = PRODUCTS.indexOf(p);
+  return `<div class="card">
+    <div class="c-ref">#${p.art}</div>
+    <div class="c-name">${p.name}</div>
+    ${dimStr?`<div class="c-dim">${dimStr}</div>`:''}
+    <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:2px">
+      <span class="c-price">${fmt(p.prixNet)}</span><span class="c-price-sub"> € HT/${unitLbl}</span>
+      ${p.remise?`<span class="c-remise">${fmt(p.prixBrut)}€ − ${p.remise}% remise</span>`:''}
+    </div>
+    <div class="c-meta">
+      ${maxInfo?`<span class="tag tag-orange">${maxInfo}</span>`:''}
+    </div>
+    <div class="c-actions">
+      <button class="btn-add" onclick="addCart(${idx})">${btnLbl}</button>
+      ${p.ft?`<a class="btn-doc" href="${p.ft}" target="_blank" rel="noopener noreferrer">FT</a>`:''}
+      ${p.pose?`<a class="btn-doc" href="${p.pose}" target="_blank" rel="noopener noreferrer">Pose</a>`:''}
+    </div>
+  </div>`;
+}
+
+// ── CART ───────────────────────────────────────────────────────────────────
+function addCart(idx){
+  const p=PRODUCTS[idx];
+  const ex=cart.find(l=>l.p.art===p.art);
+  if(ex) ex.qty++;
+  else cart.push({p,qty:1,id:uid++});
+  renderCart();
+}
+function chgQty(id,d){
+  const l=cart.find(x=>x.id===id);
+  if(!l) return;
+  l.qty=Math.max(1,l.qty+d);
+  renderCart();
+}
+function rmLine(id){
+  cart=cart.filter(x=>x.id!==id);
+  renderCart();
+}
+function vider(){ cart=[]; renderCart(); }
+
+function fill(){
+  return cart.reduce((s,l)=>{
+    const f=l.p.type==='citerne'?l.p.frac:l.p.fracPal;
+    return s+(f||0)*l.qty;
+  },0);
+}
+function renderCart(){
+  const el=document.getElementById('order');
+  const bar=document.getElementById('fbar');
+  const pctEl=document.getElementById('fpct');
+  const fnote=document.getElementById('fnote');
+  const warn=document.getElementById('wbox');
+  const sub=document.getElementById('p-sub');
+  if(!cart.length){
+    el.innerHTML='<div class="empty-order">Cliquez sur « + 1 palette » ou « + 1 unité »<br>pour ajouter des produits</div>';
+    bar.style.width='0%'; bar.style.background='hsl(0,72%,38%)';
+    pctEl.textContent='0%'; pctEl.className='fill-pct';
+    fnote.textContent='Ajoutez des produits au camion';
+    warn.style.display='none';
+    sub.textContent='Camion vide';
+    renderTotals(); return;
+  }
+  const f=fill(); const pct=Math.round(f*100);
+  bar.style.width=Math.min(f*100,100)+'%';
+  let barColor;
+  if(pct<=85){ const hue=Math.round((pct/85)*120); barColor=`hsl(${hue},72%,38%)`; pctEl.className='fill-pct ok'; }
+  else if(pct<=100){ barColor='var(--green)'; pctEl.className='fill-pct ok'; }
+  else { barColor='var(--red)'; pctEl.className='fill-pct over'; }
+  bar.style.background=barColor;
+  pctEl.textContent=pct+'%';
+  const tot=cart.reduce((s,l)=>s+l.qty,0);
+  sub.textContent=`${tot} article(s) · ${pct}% chargé`;
+  if(pct>100){ warn.style.display='block'; warn.textContent=`⚠ Dépassement +${pct-100}% — alléger`; fnote.textContent=''; }
+  else if(pct>85){ warn.style.display='none'; fnote.textContent=`Camion à ${pct}% — quasi-plein`; }
+  else { warn.style.display='none'; fnote.textContent=`${100-pct}% disponible`; }
+  el.innerHTML=cart.map(l=>{
+    const u=l.p.type==='citerne'?'u.':'pal.';
+    return `<div class="ol">
+      <div class="ol-name" title="${l.p.name}">${l.p.name}</div>
+      <div class="ol-qty">
+        <button class="q-btn" onclick="chgQty(${l.id},-1)">−</button>
+        <span class="q-val">${l.qty}</span>
+        <button class="q-btn" onclick="chgQty(${l.id},1)">+</button>
+      </div>
+      <div class="ol-price">${fmt(l.p.prixNet*l.qty)} €<br><span style="font-size:9px;opacity:.5">${l.qty} ${u}</span></div>
+      <button class="ol-rm" onclick="rmLine(${l.id})">×</button>
+    </div>`;
+  }).join('');
+  renderTotals();
+}
+function renderTotals(){
+  const t=parseInt(document.getElementById('zone').value)||480;
+  const prod=cart.reduce((s,l)=>s+l.p.prixNet*l.qty,0);
+  const surcharge=t*0.066;
+  const total=prod+t+surcharge;
+  document.getElementById('t-prod').textContent=fmt(prod)+' €';
+  document.getElementById('t-transp').textContent=fmt(t)+' €';
+  if(document.getElementById('t-surcharge')) document.getElementById('t-surcharge').textContent=fmt(surcharge)+' €';
+  document.getElementById('t-total').textContent=fmt(total)+' €';
+}
+
+// ── PDF ────────────────────────────────────────────────────────────────────
+function imprimer(){
+  if(!cart.length){alert('Le camion est vide.');return;}
+  const t=parseInt(document.getElementById('zone').value)||480;
+  const zLbl=document.getElementById('zone').selectedOptions[0].text;
+  const agence=(document.getElementById('ci-agence')||{value:''}).value.trim();
+  const cp=(document.getElementById('ci-cp')||{value:''}).value.trim();
+  const ville=(document.getElementById('ci-ville')||{value:''}).value.trim();
+  const email=(document.getElementById('ci-email')||{value:''}).value.trim();
+  const refCmd=(document.getElementById('ci-ref')||{value:''}).value.trim();
+  const prod=cart.reduce((s,l)=>s+l.p.prixNet*l.qty,0);
+  const surcharge=Math.round(t*0.066*100)/100;
+  const total=prod+t+surcharge;
+  const fillPct=Math.round(fill()*100);
+  const now=new Date().toLocaleDateString('fr-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const fillColor=fillPct>100?'#b91c1c':fillPct>85?'#c2710c':'#3d7a34';
+  const clientAddr=[cp,ville].filter(Boolean).join(' ');
+  const rows=cart.map(l=>{
+    const unit=l.p.type==='citerne'?'unité(s)':'palette(s)';
+    return `<tr>
+      <td style="font-family:monospace;font-size:11px;color:#555;padding:6px 8px;border-bottom:1px solid #e5e7eb">${l.p.art}</td>
+      <td style="padding:6px 8px;border-bottom:1px solid #e5e7eb">${l.p.name}</td>
+      <td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;text-align:center">${l.qty} ${unit}</td>
+      <td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(l.p.prixNet)} €</td>
+      <td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;text-align:right;font-weight:600">${fmt(l.p.prixNet*l.qty)} €</td>
+    </tr>`;
+  }).join('');
+  const doc=`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Commande Remacle — ${now}</title>
+<style>
+body{font-family:Arial,sans-serif;font-size:12px;color:#1B2B4B;margin:0;padding:28px 32px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:18px;border-bottom:2px solid #1B2B4B;margin-bottom:20px}
+.co{font-size:22px;font-weight:700}.sub{font-size:11px;color:#3d7a34;font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
+.addr{font-size:11px;color:#555;margin-top:8px;line-height:1.7}
+.right{text-align:right}.rtitle{font-size:16px;font-weight:700;margin-bottom:5px}
+.rcontact{font-size:11px;color:#555;line-height:1.7;margin-top:5px}
+h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#6b7280;margin:18px 0 8px}
+table{width:100%;border-collapse:collapse}
+th{background:#1B2B4B;color:#fff;padding:8px;font-size:11px;text-align:left;font-weight:500}
+th:nth-child(3){text-align:center}th:nth-child(4),th:nth-child(5){text-align:right}
+.fill-box{background:#f4f5f7;border:1px solid #e5e7eb;border-radius:6px;padding:9px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.fp{font-size:20px;font-weight:700;color:${fillColor}}
+.transp{background:#fffbf0;border:1px solid #fde68a;border-radius:6px;padding:9px 14px;display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
+.tots{margin-left:auto;width:260px;border-top:2px solid #1B2B4B;padding-top:10px;margin-top:4px}
+.tr{display:flex;justify-content:space-between;font-size:11px;color:#555;padding:3px 0}
+.tg{display:flex;justify-content:space-between;font-size:16px;font-weight:700;padding-top:7px;border-top:1px solid #e5e7eb;margin-top:4px}
+.iban{background:#f4f5f7;border-radius:6px;padding:10px 14px;font-size:11px;color:#374151;margin-top:18px;line-height:1.8}
+.delai{background:#eaf4e8;border:1px solid #c6e6c0;border-radius:6px;padding:10px 14px;font-size:11px;color:#374151;margin-top:10px}
+.footer{margin-top:28px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:10px;color:#9ca3af;display:flex;justify-content:space-between}
+</style></head><body>
+<div class="hdr">
+  <div>
+    <div class="co">REMACLE BÉTON</div>
+    <div class="sub">Catalogue Pro France 2026</div>
+    <div class="addr">Remacle SA · Rue Sous-La-Ville 8 · B-5150 Floriffoux (Belgique)<br>
+    T : +32 81 44 88 88 · info@remacle.be · www.remacle.be<br>
+    TVA : BE 0402 569 893 · RPM Namur</div>
+  </div>
+  <div class="right">
+    <div class="rtitle">Récapitulatif commande</div>
+    <div style="font-size:12px;color:#555">Date : ${now}</div>
+    ${(()=>{const b=document.getElementById('tarif-badge');const n=document.getElementById('tarif-nom');return b&&b.style.display!=='none'?`<div style="font-size:10px;background:#dcfce7;color:#166534;border-radius:4px;padding:2px 8px;margin-top:3px;display:inline-block">📊 ${n.textContent}</div>`:''})()}
+    ${agence?`<div style="font-size:13px;font-weight:700;margin-top:4px;color:#1B2B4B">${agence}</div>`:''}
+    ${clientAddr?`<div style="font-size:11px;color:#555">${clientAddr}</div>`:''}
+    ${refCmd?`<div style="font-size:10px;color:#555;margin-top:2px">Réf : ${refCmd}</div>`:''}
+    <div class="rcontact">Christophe Decoster · Country Manager France<br>+32 495 80 69 75 · cdc@remacle.be</div>
+  </div>
+</div>
+<div class="fill-box">
+  <span class="fp">${fillPct}%</span>
+  <span style="font-size:11px">Taux de remplissage camion plateau</span>
+  <span style="margin-left:auto;font-size:10px;color:#555">${cart.reduce((s,l)=>s+l.qty,0)} article(s) · ${zLbl}</span>
+</div>
+<h3>Détail de la commande</h3>
+<table><thead><tr>
+  <th>Art. n°</th><th>Désignation</th><th>Qté</th><th>Prix unit. HT</th><th>Total ligne HT</th>
+</tr></thead><tbody>${rows}</tbody></table>
+<div class="transp">
+  <span>🚛 Transport — camion plateau · ${zLbl}</span>
+  <strong>${fmt(t)} € HT</strong>
+</div>
+<div class="transp" style="background:#fff8f0;border-color:#fed7aa;margin-top:4px">
+  <span>⛽ Surcharge carburant UPTR 6,6% · art. 525845<br><em style="font-size:10px;color:#92400e">Supplément temporaire — conforme directive UPTR carburant</em></span>
+  <strong>${fmt(surcharge)} € HT</strong>
+</div>
+<div class="tots">
+  <div class="tr"><span>Sous-total produits</span><span>${fmt(prod)} €</span></div>
+  <div class="tr"><span>Transport plateau</span><span>${fmt(t)} €</span></div>
+  <div class="tr"><span>Surcharge carburant UPTR (6,6% transp.)</span><span>${fmt(surcharge)} €</span></div>
+  <div class="tg"><span>TOTAL HT</span><span>${fmt(total)} €</span></div>
+</div>
+<div class="iban">
+  <strong>Coordonnées bancaires</strong><br>
+  KBC · IBAN : BE61 7350 4730 9817 · BIC : KREDBEBB<br>
+  BELFIUS · IBAN : BE71 5645 1404 0069 · BIC : GKCCBEBB
+</div>
+<div class="delai">
+  📧 <strong>Date de livraison</strong> — Envoyez ce document à <a href="mailto:info@remacle.be" style="color:#3d7a34">info@remacle.be</a> pour connaître votre date de livraison estimée.<br>
+  Délai habituel : 1 à 3 semaines selon planning de production et de livraison.
+</div>
+<div class="footer">
+  <span>Remacle SA · TVA BE 0402 569 893 · RPM Namur — <a href="https://www.remacle.be/fr/produits" style="color:#9ca3af">www.remacle.be</a> — Tarif nets négoce HT 2026</span>
+  <span>Généré le ${now}</span>
+</div>
+</body></html>`;
+  let pframe=document.getElementById('_pframe');
+  if(!pframe){
+    pframe=document.createElement('iframe');
+    pframe.id='_pframe';
+    pframe.style.cssText='position:fixed;width:0;height:0;border:none;left:-9999px';
+    document.body.appendChild(pframe);
+  }
+  pframe.srcdoc=doc;
+  setTimeout(()=>{
+    try{ pframe.contentWindow.focus(); pframe.contentWindow.print(); }
+    catch(e){
+      const blob=new Blob([doc],{type:'text/html'});
+      const url=URL.createObjectURL(blob);
+      window.open(url,'_blank');
+      setTimeout(()=>URL.revokeObjectURL(url),10000);
+    }
+  },800);
+}
+
+// ── EMAIL ──────────────────────────────────────────────────────────────────
+function envoyerMail(){
+  if(!cart.length){alert('Le camion est vide.');return;}
+  const agence=(document.getElementById('ci-agence')||{value:''}).value.trim();
+  const cp=(document.getElementById('ci-cp')||{value:''}).value.trim();
+  const ville=(document.getElementById('ci-ville')||{value:''}).value.trim();
+  const email=(document.getElementById('ci-email')||{value:''}).value.trim();
+  const refCmd=(document.getElementById('ci-ref')||{value:''}).value.trim();
+  const t=parseInt(document.getElementById('zone').value)||480;
+  const zLbl=document.getElementById('zone').selectedOptions[0].text;
+  const prod=cart.reduce((s,l)=>s+l.p.prixNet*l.qty,0);
+  const surcharge2=Math.round(t*0.066*100)/100;
+  const total=prod+t+surcharge2;
+  const now=new Date().toLocaleDateString('fr-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const loc=[cp,ville].filter(Boolean).join(' ');
+  const lines=cart.map(l=>{
+    const u=l.p.type==='citerne'?'u.':'pal.';
+    return '  #'+l.p.art+' '+l.p.name+' ×'+l.qty+' '+u+' = '+fmt(l.p.prixNet*l.qty)+' € HT';
+  }).join('\n');
+  const body=[
+    'Bonjour Christophe,',
+    '',
+    'Récapitulatif de commande :',
+    'Client   : '+(agence||'—')+(loc?' — '+loc:''),
+    refCmd?'Réf.     : '+refCmd:'',
+    '',
+    lines,
+    '',
+    'Sous-total produits          : '+fmt(prod)+' € HT',
+    'Transport plateau ('+zLbl+') : '+fmt(t)+' € HT',
+    'Surcharge carburant UPTR 6,6%: '+fmt(Math.round(t*0.066*100)/100)+' € HT  [art. 525845 — temporaire]',
+    'TOTAL HT                     : '+fmt(total)+' € HT',
+    'Remplissage         : '+Math.round(fill()*100)+'%',
+    '',
+    'Date : '+now,
+    '',
+    '⚠ Merci de joindre le PDF téléchargé automatiquement à cet email.',
+  ].filter(l=>l!==undefined).join('\n');
+  const subj='Commande Remacle — '+(agence||'Client')+' — '+now;
+
+  // Download PDF first
+  const t2=parseInt(document.getElementById('zone').value)||480;
+  const prod2=cart.reduce((s,l)=>s+l.p.prixNet*l.qty,0);
+  const total2=prod2+t2;
+  const fillPct2=Math.round(fill()*100);
+  const fillColor2=fillPct2>100?'#b91c1c':fillPct2>85?'#c2710c':'#3d7a34';
+  const rows2=cart.map(l=>{
+    const u=l.p.type==='citerne'?'unité(s)':'palette(s)';
+    return `<tr><td style="font-family:monospace;font-size:11px;color:#555;padding:5px 8px;border-bottom:1px solid #e5e7eb">${l.p.art}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb">${l.p.name}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;text-align:center">${l.qty} ${u}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(l.p.prixNet)} €</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;text-align:right;font-weight:600">${fmt(l.p.prixNet*l.qty)} €</td></tr>`;
+  }).join('');
+  const docBlob=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Commande Remacle</title><style>body{font-family:Arial,sans-serif;font-size:12px;color:#1B2B4B;padding:28px 32px}.hdr{display:flex;justify-content:space-between;padding-bottom:16px;border-bottom:2px solid #1B2B4B;margin-bottom:18px}.co{font-size:20px;font-weight:700}.sub{font-size:10px;color:#3d7a34;font-weight:600;text-transform:uppercase;letter-spacing:.8px}.addr{font-size:10px;color:#555;margin-top:6px;line-height:1.7}.right{text-align:right}.rtitle{font-size:15px;font-weight:700}.rcontact{font-size:10px;color:#555;line-height:1.7;margin-top:4px}h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#6b7280;margin:16px 0 7px}table{width:100%;border-collapse:collapse}th{background:#1B2B4B;color:#fff;padding:7px;font-size:10px;text-align:left}th:nth-child(3){text-align:center}th:nth-child(4),th:nth-child(5){text-align:right}.fill-box{background:#f4f5f7;border:1px solid #e5e7eb;border-radius:6px;padding:8px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}.fp{font-size:18px;font-weight:700;color:${fillColor2}}.transp{background:#fffbf0;border:1px solid #fde68a;border-radius:6px;padding:8px 14px;display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px}.tots{margin-left:auto;width:240px;border-top:2px solid #1B2B4B;padding-top:8px;margin-top:3px}.tr{display:flex;justify-content:space-between;font-size:11px;color:#555;padding:2px 0}.tg{display:flex;justify-content:space-between;font-size:14px;font-weight:700;padding-top:6px;border-top:1px solid #e5e7eb;margin-top:3px}.iban{background:#f4f5f7;border-radius:6px;padding:9px 14px;font-size:10px;color:#374151;margin-top:14px;line-height:1.8}.delai{background:#eaf4e8;border:1px solid #c6e6c0;border-radius:6px;padding:9px 14px;font-size:10px;color:#374151;margin-top:8px}.footer{margin-top:24px;padding-top:10px;border-top:1px solid #e5e7eb;font-size:9px;color:#9ca3af;display:flex;justify-content:space-between}</style></head><body>
+  <div class="hdr"><div><div class="co">REMACLE BÉTON</div><div class="sub">Catalogue Pro France 2026</div><div class="addr">Remacle SA · Rue Sous-La-Ville 8 · B-5150 Floriffoux (Belgique)<br>T : +32 81 44 88 88 · info@remacle.be · www.remacle.be<br>TVA : BE 0402 569 893 · RPM Namur</div></div>
+  <div class="right"><div class="rtitle">Récapitulatif commande</div><div style="font-size:11px;color:#555">Date : ${now}</div>${agence?`<div style="font-size:12px;font-weight:700;margin-top:4px">${agence}</div>`:''}${loc?`<div style="font-size:10px;color:#555">${loc}</div>`:''}${refCmd?`<div style="font-size:10px;color:#555">Réf : ${refCmd}</div>`:''}<div class="rcontact">Christophe Decoster · Country Manager France<br>+32 495 80 69 75 · cdc@remacle.be</div></div></div>
+  <div class="fill-box"><span class="fp">${fillPct2}%</span><span style="font-size:11px">Taux de remplissage camion plateau</span><span style="margin-left:auto;font-size:10px;color:#555">${zLbl}</span></div>
+  <h3>Détail de la commande</h3>
+  <table><thead><tr><th>Art. n°</th><th>Désignation</th><th>Qté</th><th>Prix unit. HT</th><th>Total ligne HT</th></tr></thead><tbody>${rows2}</tbody></table>
+  <div class="transp"><span>🚛 Transport — camion plateau · ${zLbl}</span><strong>${fmt(t2)} € HT</strong></div>
+  <div class="tots"><div class="tr"><span>Sous-total produits</span><span>${fmt(prod2)} €</span></div><div class="tr"><span>Transport</span><span>${fmt(t2)} €</span></div><div class="tg"><span>TOTAL HT</span><span>${fmt(total2)} €</span></div></div>
+  <div class="iban"><strong>Coordonnées bancaires</strong><br>KBC · IBAN : BE61 7350 4730 9817 · BIC : KREDBEBB<br>BELFIUS · IBAN : BE71 5645 1404 0069 · BIC : GKCCBEBB</div>
+  <div class="delai">📧 Envoyez ce document à <a href="mailto:info@remacle.be" style="color:#3d7a34">info@remacle.be</a> pour connaître votre date de livraison. Délai habituel : 1 à 3 semaines.</div>
+  <div class="footer"><span>Remacle SA · TVA BE 0402 569 893 · RPM Namur — Tarif nets négoce HT 2026</span><span>Généré le ${now}</span></div>
+  </body></html>`;
+  const blob=new Blob([docBlob],{type:'text/html'});
+  const burl=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=burl; a.download='Commande_Remacle_'+now.replace(/\//g,'-')+'.html';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(burl),5000);
+  setTimeout(()=>{
+    window.location.href='mailto:info@remacle.be,cdc@remacle.be'
+      +(email?'?cc='+encodeURIComponent(email):'?')
+      +'&subject='+encodeURIComponent(subj)
+      +'&body='+encodeURIComponent(body);
+  },1000);
+}
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
+function fmt(n){return Number(n).toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+// ── IMPORT TARIF EXCEL ─────────────────────────────────────────────────────
+let _baseProducts = null; // snapshot of original prices
+
+function importerTarif(input){
+  const file = input.files[0];
+  if(!file) return;
+  const status = document.getElementById('import-status');
+  status.textContent = '⏳ Lecture...';
+
+  // Save base prices on first import
+  if(!_baseProducts){
+    _baseProducts = PRODUCTS.map(p=>({art:p.art, prixNet:p.prixNet, prixBrut:p.prixBrut, remise:p.remise}));
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const wb = XLSX.read(e.target.result, {type:'binary'});
+      const ws = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:''});
+
+      // Detect client name from filename
+      const rawName = file.name.replace(/\.(xlsx|xls)$/i,'').replace(/[_-]/g,' ').trim();
+      const clientName = rawName.length > 30 ? rawName.substring(0,28)+'…' : rawName;
+
+      // Find header row
+      let hdrIdx=-1, artCol=-1, prixNetCol=-1, prixBrutCol=-1, remiseCol=-1;
+      for(let i=0;i<Math.min(10,rows.length);i++){
+        const row = rows[i].map(c=>String(c).toLowerCase());
+        const artC = row.findIndex(c=>c.includes('article')||c==='art'||c==='code'||c.includes('référence'));
+        const netC = row.findIndex(c=>(c.includes('net')&&(c.includes('goce')||c.includes('prix')))||c==='prix net');
+        const brutC = row.findIndex(c=>c.includes('brut')||c.includes('list')||c.includes('tarif'));
+        const remC = row.findIndex(c=>c.includes('remise')||c.includes('discount')||c==='%');
+        if(artC>=0 && netC>=0){ hdrIdx=i; artCol=artC; prixNetCol=netC; prixBrutCol=brutC>=0?brutC:-1; remiseCol=remC>=0?remC:-1; break; }
+      }
+      if(hdrIdx<0){ status.textContent='❌ Format non reconnu'; input.value=''; return; }
+
+      // Build lookup
+      const lookup = {};
+      for(let i=hdrIdx+1;i<rows.length;i++){
+        const row = rows[i];
+        const art = String(row[artCol]||'').trim().replace(/\.0$/,'');
+        if(!art||isNaN(Number(art))) continue;
+        const net  = parseFloat(String(row[prixNetCol]||'').replace(',','.'));
+        const brut = prixBrutCol>=0 ? parseFloat(String(row[prixBrutCol]||'').replace(',','.')) : NaN;
+        const rem  = remiseCol>=0  ? parseFloat(String(row[remiseCol ]||'').replace(',','.')) : NaN;
+        if(!isNaN(net) && net>0) lookup[art] = {net, brut:isNaN(brut)?null:brut, rem:isNaN(rem)?null:rem};
+      }
+
+      // Apply to PRODUCTS
+      let updated=0, notFound=[];
+      PRODUCTS.forEach(p=>{
+        if(lookup[p.art]){
+          p.prixNet  = lookup[p.art].net;
+          if(lookup[p.art].brut) p.prixBrut = lookup[p.art].brut;
+          if(lookup[p.art].rem)  p.remise   = lookup[p.art].rem;
+          updated++;
+        } else { notFound.push(p.art); }
+      });
+
+      // Show badge
+      const badge = document.getElementById('tarif-badge');
+      const nomEl = document.getElementById('tarif-nom');
+      if(badge && nomEl){ nomEl.textContent = clientName; badge.style.display='flex'; badge.style.alignItems='center'; badge.style.gap='4px'; }
+
+      renderCat(); renderCart(); renderTotals();
+      const msg = '✓ '+updated+' prix'+(notFound.length?' · '+notFound.length+' absents':'');
+      status.innerHTML = '<span style="color:#86efac">'+msg+'</span>';
+      setTimeout(()=>status.textContent='', 6000);
+    } catch(err){
+      status.textContent = '❌ '+err.message;
+    }
+    input.value='';
+  };
+  reader.readAsBinaryString(file);
+}
+
+function resetTarif(){
+  if(!_baseProducts) return;
+  _baseProducts.forEach(base=>{
+    const p = PRODUCTS.find(x=>x.art===base.art);
+    if(p){ p.prixNet=base.prixNet; p.prixBrut=base.prixBrut; p.remise=base.remise; }
+  });
+  _baseProducts = null;
+  const badge = document.getElementById('tarif-badge');
+  if(badge) badge.style.display='none';
+  document.getElementById('import-status').textContent='';
+  renderCat(); renderCart(); renderTotals();
+}
+
+// ── SIDEBAR NAV ─────────────────────────────────────────────────────────────
+function renderSidebar(groups){
+  const sb = document.getElementById('sidebar');
+  const lbl = document.getElementById('sb-label');
+  if(!sb) return;
+  const sections = Object.entries(groups);
+  if(sections.length <= 1){
+    sb.style.display = 'none';
+    return;
+  }
+  sb.style.display = 'flex';
+  const tabLabel = TABS.find(t=>t.id===activeTab)||{label:'Sections'};
+  lbl.textContent = tabLabel.label;
+  const items = sections.map(([sec, items], i) => {
+    const short = sec.length > 26 ? sec.substring(0,24)+'…' : sec;
+    return `<div class="sb-section${i===0?' active':''}" data-sec="${sec.replace(/"/g,'&quot;')}" onclick="jumpToSection(this,'${sec.replace(/'/g,'\'')}')" title="${sec}">
+      <span>${short}</span>
+      <span class="sb-n">${items.length}</span>
+    </div>`;
+  }).join('');
+  sb.innerHTML = '<div class="sb-label" id="sb-label">'+tabLabel.label+'</div>' + items;
+}
+
+function jumpToSection(el, sec){
+  // Highlight active in sidebar
+  document.querySelectorAll('.sb-section').forEach(s=>s.classList.remove('active'));
+  el.classList.add('active');
+  // Find and scroll to section in catalogue
+  const cat = document.getElementById('cat');
+  // For accordion: open the relevant details and scroll to it
+  const details = [...cat.querySelectorAll('details.acc')].find(d=>{
+    const title = d.querySelector('.acc-title');
+    return title && title.textContent.trim() === sec;
+  });
+  if(details){
+    // Close all, open target
+    cat.querySelectorAll('details.acc').forEach(d=>{ if(d!==details) d.removeAttribute('open'); });
+    details.setAttribute('open','');
+    setTimeout(()=>details.scrollIntoView({behavior:'smooth',block:'start'}),50);
+    return;
+  }
+  // For non-accordion: find grp-hdr with matching title
+  const headers = [...cat.querySelectorAll('.grp-title')].find(h=>h.textContent.trim()===sec);
+  if(headers){
+    headers.closest('.grp-hdr').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+// Highlight sidebar item on catalogue scroll
+function initSidebarScroll(){
+  const cat = document.getElementById('cat');
+  if(!cat) return;
+  cat.addEventListener('scroll', ()=>{
+    const sb = document.getElementById('sidebar');
+    if(!sb || sb.style.display==='none') return;
+    // Find which section is most visible
+    const catRect = cat.getBoundingClientRect();
+    let closest = null, minDist = Infinity;
+    // Check accordion headers
+    cat.querySelectorAll('.acc-sum, .grp-hdr').forEach(el=>{
+      const rect = el.getBoundingClientRect();
+      const dist = Math.abs(rect.top - catRect.top);
+      if(dist < minDist){ minDist=dist; closest=el; }
+    });
+    if(!closest) return;
+    const sec = closest.querySelector('.acc-title, .grp-title')?.textContent?.trim();
+    if(!sec) return;
+    const sbItems = sb.querySelectorAll('.sb-section');
+    sbItems.forEach(item=>{
+      const isMatch = item.dataset.sec === sec;
+      item.classList.toggle('active', isMatch);
+      if(isMatch) item.scrollIntoView({block:'nearest'});
+    });
+  }, {passive:true});
+}
+
+// ── BOOTSTRAP ─────────────────────────────────────────────────────────────
+init();
+</script>
+</body></html>
