@@ -556,7 +556,7 @@ function cardHTML(p){
       ${maxInfo?`<span class="tag tag-orange">${maxInfo}</span>`:''}
     </div>
     <div class="c-actions">
-      <button class="btn-add" onclick="addCart(${idx},isCit)">${btnLbl}</button>
+      <button class="btn-add" onclick="addCart(${idx},${isCit})">${btnLbl}</button>
       ${p.ft?`<a class="btn-doc" href="${p.ft}" target="_blank" rel="noopener noreferrer">FT</a>`:''}
       ${p.pose?`<a class="btn-doc" href="${p.pose}" target="_blank" rel="noopener noreferrer">Pose</a>`:''}
     </div>
