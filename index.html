@@ -585,7 +585,7 @@ function vider(){ cart=[]; renderCart(); }
 
 function fill(){
   return cart.reduce((s,l)=>{
-    const f=l.p.type==='citerne'?l.p.frac:l.p.fracPal;
+    const f=l.p.frac;
     return s+(f||0)*l.qty;
   },0);
 }
