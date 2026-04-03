@@ -556,7 +556,7 @@ function cardHTML(p){
       ${maxInfo?`<span class="tag tag-orange">${maxInfo}</span>`:''}
     </div>
     <div class="c-actions">
-      <button class="btn-add" onclick="addCart(${idx})">${btnLbl}</button>
+      <button class="btn-add" onclick="addCart(${idx},isCit)">${btnLbl}</button>
       ${p.ft?`<a class="btn-doc" href="${p.ft}" target="_blank" rel="noopener noreferrer">FT</a>`:''}
       ${p.pose?`<a class="btn-doc" href="${p.pose}" target="_blank" rel="noopener noreferrer">Pose</a>`:''}
     </div>
@@ -564,11 +564,11 @@ function cardHTML(p){
 }
 
 // ── CART ───────────────────────────────────────────────────────────────────
-function addCart(idx){
+function addCart(idx,isCit){
   const p=PRODUCTS[idx];
   const ex=cart.find(l=>l.p.art===p.art);
-  if(ex) ex.qty++;
-  else cart.push({p,qty:1,id:uid++});
+  if(ex) ex.qty+=(isCit?1:(p.palQty||1));
+  else cart.push({p,qty:(isCit?1:(p.palQty||1)),id:uid++});
   renderCart();
 }
 function chgQty(id,d){
